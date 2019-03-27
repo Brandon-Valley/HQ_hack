@@ -10,31 +10,62 @@ def read_text_file(file_path):
     
     
     
-#get rid of questions that dont have answers, q_d = question_dict
+#get rid of questions that dont have answers, or correct answers q_d = question_dict
 def trim_input_data_l(input_data_l):    
     for q_d in input_data_l:
-        if len(q_d['answers']) == 0:
+        if len(q_d['answers']) < 3 :
             input_data_l.remove(q_d)
-#     return input_data_l
             
+            
+def get_answer(answer_letter, in_d):
+    for answer_d in in_d['answers']:
+        if answer_d['choice'] == answer_letter:
+            return answer_d['text']
+            
+            
+def get_correct_letter(in_d):
+    for answer_d in in_d['answers']:
+        if answer_d['correct'] == True:
+            return answer_d['choice']
+            
+            
+#   timestamp    quest #    question    a    b    c    correct
+
+def build_log_dl(input_data_l):
+    log_dl = []
     
-# input_file_path = 'kaggle_1553_DB.json'
-    
-# raw_input = read_text_file(input_file_path)
+    for in_d in input_data_l:
+        log_d = {'timestamp': in_d['timestamp'],
+                 'question #': in_d['question_num'],
+                 'question': in_d['question'],
+                 'A': get_answer('A', in_d),
+                 'B': get_answer('B', in_d),
+                 'C': get_answer('C', in_d),
+                 'correct': get_correct_letter(in_d)}
+        log_dl.append(log_d)
+    return log_dl
+
+
+
+
+output_csv_filename = 'kaggle_1553_DB.csv'
+header_list = ['timestamp', 'question #', 'question', 'A', 'B', 'C', 'correct']
 
 with open('kaggle_1553_DB.json', 'r') as f:
     input_data_l = json.load(f)
 
-# for distro in distros_dict:
-#     print(distro['answers'][0])
 
 
 trim_input_data_l(input_data_l)
+log_dl = build_log_dl(input_data_l)
+logger.logList(log_dl, output_csv_filename, wantBackup = True, headerList = header_list, overwriteAction = 'append')
+
+print('done!')
+# print(log_dl)
 
 
-
-for distro in input_data_l:
-    print(distro['answers'][0])
+# for distro in input_data_l:
+#     print(distro['answers'][0])
 
 
 
