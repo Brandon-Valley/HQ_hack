@@ -9,12 +9,24 @@ def read_text_file(file_path):
         return result
     
     
+def no_answers_empty(q_d):
+    for answer_d in q_d['answers']:
+        if answer_d['text'] == '':
+            return False
+    return True
+    
+    
     
 #get rid of questions that dont have answers, or correct answers q_d = question_dict
 def trim_input_data_l(input_data_l):    
+    trimmed_input_data_l = []
     for q_d in input_data_l:
-        if len(q_d['answers']) < 3 :
-            input_data_l.remove(q_d)
+#         print(len(q_d['answers']))
+        if len(q_d['answers']) == 3 and no_answers_empty(q_d):
+            trimmed_input_data_l.append(q_d)
+#             print(len(q_d['answers']))
+#             input_data_l.remove(q_d)
+    return trimmed_input_data_l
             
             
 def get_answer(answer_letter, in_d):
@@ -56,9 +68,9 @@ with open('kaggle_1553_DB.json', 'r') as f:
 
 
 
-trim_input_data_l(input_data_l)
-log_dl = build_log_dl(input_data_l)
-logger.logList(log_dl, output_csv_filename, wantBackup = True, headerList = header_list, overwriteAction = 'append')
+trimmed_input_data_l = trim_input_data_l(input_data_l)
+log_dl = build_log_dl(trimmed_input_data_l)
+logger.logList(log_dl, output_csv_filename, wantBackup = True, headerList = header_list, overwriteAction = 'overwrite')
 
 print('done!')
 # print(log_dl)
