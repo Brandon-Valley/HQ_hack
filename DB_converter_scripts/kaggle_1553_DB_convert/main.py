@@ -1,3 +1,6 @@
+#more data at https://twitter.com/HQTriviaScribe
+
+
 import logger
 
 import json
