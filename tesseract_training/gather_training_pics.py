@@ -54,18 +54,32 @@ def main():
     
     cur_question_img_num, cur_options_img_num = get_current_img_nums()
     
-    print(cur_options_img_num)
+#     print(cur_options_img_num)
 #     print(cur_img_num_d)
-    
-    
     qo_dict = { 'question': '', 
                 'option_1': '',
                 'option_2': '',
                 'option_3': ''  }
-           
-    run_grab_screen_and_extract_text_threads(qo_dict)
+   
+    while(True):
     
-    
+        user_input = input('q to quit, anything else to continue:  ')
+       
+        if user_input == 'q':
+            break
+        
+        qo_img_path_list = [QUESTION_TRAINING_PICS_PATH + '\\q_' + str(cur_question_img_num + 1) + '.png',
+                            OPTIONS_TRAINING_PICS_PATH  + '\\o_' + str(cur_options_img_num + 1)  + '.png',
+                            OPTIONS_TRAINING_PICS_PATH  + '\\o_' + str(cur_options_img_num + 2)  + '.png',
+                            OPTIONS_TRAINING_PICS_PATH  + '\\o_' + str(cur_options_img_num + 3)  + '.png',]
+        cur_question_img_num += 1
+        cur_options_img_num  += 3
+
+        
+        print('running...')    
+        extract_text.run_grab_screen_and_extract_text_threads(qo_dict, qo_img_path_list)
+        
+    #     print(qo_dict)
     
     
     
@@ -73,4 +87,5 @@ def main():
     
 if __name__ == "__main__":
     main()
+    print('done!')
     
