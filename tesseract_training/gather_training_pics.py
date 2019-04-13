@@ -28,11 +28,34 @@ OPTIONS_TRAINING_PICS_PATH  = 'training_pics\\options'
 def filenames_in_dir(dir_path):
     return [f for f in listdir(dir_path) if isfile(join(dir_path, f))]
 
+
+def get_current_img_num_d():
+    cur_img_num_d = {'question': 0,
+                     'options'  :0}
+    
+    question_img_filenames = filenames_in_dir(QUESTION_TRAINING_PICS_PATH)
+    option_img_filenames   = filenames_in_dir(OPTIONS_TRAINING_PICS_PATH) 
+    
+    
+    try:
+        cur_img_num_d['question'] = int ( question_img_filenames[0].split('.')[0].split('_')[-1] )
+    except:
+        pass
+    try:
+        cur_img_num_d['option']   = int ( option_img_filenames  [0].split('.')[0].split('_')[-1] )
+    except:
+        pass
+    
+    return cur_img_num_d
+    
 def main():
 #     onlyfiles = [f for f in listdir(QUESTION_TRAINING_PICS_PATH) if isfile(join(QUESTION_TRAINING_PICS_PATH, f))]
 #     print(onlyfiles)
     
     print(filenames_in_dir(OPTIONS_TRAINING_PICS_PATH))
+    
+    cur_img_num_d = get_current_img_num_d()
+    print(cur_img_num_d)
     
     
     qo_dict = { 'question': '', 
