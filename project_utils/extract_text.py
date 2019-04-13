@@ -1,14 +1,19 @@
-
 #for some reason OCR works a lot better when you get a different screenshot for the question and each option
+
+
+import os, sys
+sys.path.append(os.path.dirname(os.path.dirname(os.path.realpath(__file__))))
+
+
 from PIL import Image
 import pytesseract
 import argparse
 import cv2
-import os
 import pyscreenshot as Imagegrab
 from threading import Thread
 
-import testing_utils
+
+from project_utils import testing_utils
 
 
 import time #just for testing
@@ -70,13 +75,13 @@ def grab_screen_and_extract_text(screenshot_coords, img_path, qo_dict_key, qo_di
     
 
 
-def run_grab_screen_and_extract_text_threads(qo_dict):
+def run_grab_screen_and_extract_text_threads(qo_dict, img_path_list = QO_IMG_PATH_LIST):
     thread_list = []
        
-    thread_list.append(Thread(target=grab_screen_and_extract_text, args=(QUESTION_SC_COORDS, QUESTION_IMG_PATH, 'question' , qo_dict)))
-    thread_list.append(Thread(target=grab_screen_and_extract_text, args=(OPTION_1_SC_COORDS, OPTION_1_IMG_PATH, 'option_1' , qo_dict)))
-    thread_list.append(Thread(target=grab_screen_and_extract_text, args=(OPTION_2_SC_COORDS, OPTION_2_IMG_PATH, 'option_2' , qo_dict)))
-    thread_list.append(Thread(target=grab_screen_and_extract_text, args=(OPTION_3_SC_COORDS, OPTION_3_IMG_PATH, 'option_3' , qo_dict)))  
+    thread_list.append(Thread(target=grab_screen_and_extract_text, args=(QUESTION_SC_COORDS, img_path_list[0], 'question' , qo_dict)))
+    thread_list.append(Thread(target=grab_screen_and_extract_text, args=(OPTION_1_SC_COORDS, img_path_list[1], 'option_1' , qo_dict)))
+    thread_list.append(Thread(target=grab_screen_and_extract_text, args=(OPTION_2_SC_COORDS, img_path_list[2], 'option_2' , qo_dict)))
+    thread_list.append(Thread(target=grab_screen_and_extract_text, args=(OPTION_3_SC_COORDS, img_path_list[3], 'option_3' , qo_dict)))  
         
     for thread in thread_list:
         thread.start()
@@ -99,19 +104,9 @@ def read_questions_and_options_from_screen():
                 'option_1': '',
                 'option_2': '',
                 'option_3': ''  }
-     
-#     grab_screen(QUESTION_SC_COORDS, QUESTION_IMG_PATH)
-#     grab_screen(OPTION_1_SC_COORDS, OPTION_1_IMG_PATH)
-#     grab_screen(OPTION_2_SC_COORDS, OPTION_2_IMG_PATH)
-#     grab_screen(OPTION_3_SC_COORDS, OPTION_3_IMG_PATH)
-#       
+           
     run_grab_screen_and_extract_text_threads(qo_dict)
 
-#     qo_dict['question']      = extract_text_from_image(QUESTION_IMG_PATH)
-#     qo_dict['options'].append( extract_text_from_image(OPTION_1_IMG_PATH) )
-#     qo_dict['options'].append( extract_text_from_image(OPTION_2_IMG_PATH) )
-#     qo_dict['options'].append( extract_text_from_image(OPTION_3_IMG_PATH) )
-     
     delete_temp_files()
 #      
     return qo_dict

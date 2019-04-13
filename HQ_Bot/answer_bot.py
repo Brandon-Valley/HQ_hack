@@ -11,8 +11,23 @@
 	//TODO is for improving accuracy
 
 '''
-#
+
+# to ba able to import from parent dir
+import sys
+
+parent_dir_path = ''
+parent_dir_path_list = sys.path[0].split('\\')[0:-1]
+
+for dir in parent_dir_path_list:
+	parent_dir_path += dir + '\\'
+	
+parent_dir_path = parent_dir_path[0:-1]
+
+sys.path.append(parent_dir_path)
+
+
 # answering bot for trivia HQ and Cash Show
+#need to clean these up !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 import json
 import urllib.request as urllib2
 from bs4 import BeautifulSoup
@@ -27,14 +42,14 @@ import sys
 import wx
 from halo import Halo
 
-import search_utils
-import utils
-import colors
 
 import time
 
 
-
+import search_utils
+import utils
+import colors # need?????????????????????????????????????????????????????????
+from project_utils import extract_text # from parent dir
 
 
 # for terminal colors 
