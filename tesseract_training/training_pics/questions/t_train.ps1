@@ -27,24 +27,14 @@ Windows PowerShell 2.0 Download: http://support.microsoft.com/kb/968929
 #>
 
 
-echo " "
-echo " "
-echo " "
-echo " "
-echo " "
-echo " "
+echo "222 "
+echo "222 "
+echo "222 "
+echo "222 "
+echo "222 "
+echo "222 "
 
 
-
-
-if ($args[0] -and ($args[0] -eq "-?" -or $args[0] -eq "-h" -or $args[0] -eq "-help")) {
-    Write-Host "Usage: .\train.ps1"
-    Write-Host "   or  .\train.ps1 trainfolder yourlang [bootstraplang]"
-    Write-Host "where trainfolder directory contains all the training data files prefixed with yourlang, e.g.,"
-    Write-Host "vie.arial.exp0.tif, vie.font_properties, vie.unicharambigs, vie.frequent_words_list, vie.words_list,"
-    Write-Host "and could be placed directly under Tesseract directory"
-    exit
-}
 
  $trainDir = 'C:\Users\Brandon\Documents\Personal_Projects\HQ_hack\tesseract_training\training_pics\questions'
  $lang = 'eng'
@@ -77,6 +67,25 @@ if (!$bootstraplang) {
 }
 #>
 
+
+
+
+
+
+
+if ($args[0] -and ($args[0] -eq "-?" -or $args[0] -eq "-h" -or $args[0] -eq "-help")) {
+    Write-Host "Usage: .\train.ps1"
+    Write-Host "   or  .\train.ps1 trainfolder yourlang [bootstraplang]"
+    Write-Host "where trainfolder directory contains all the training data files prefixed with yourlang, e.g.,"
+    Write-Host "vie.arial.exp0.tif, vie.font_properties, vie.unicharambigs, vie.frequent_words_list, vie.words_list,"
+    Write-Host "and could be placed directly under Tesseract directory"
+    exit
+}
+
+
+
+
+
 echo "=== Generating Tesseract language data for language: $lang ==="
 
 $fullPath = Resolve-Path $trainDir
@@ -99,5 +108,68 @@ Foreach ($entry in dir $trainDir) {
       $boxFiles += $nameWoExt + ".box "
    }
 }
+echo "** Box files should be edited before continuing. **"
+
+
+
+
+
+
+
+
+
+<#
 
 echo "** Box files should be edited before continuing. **"
+
+echo "Generate .tr Files"
+$trFiles = ""
+Foreach ($entry in $al) {
+
+      #$command = 'tesseract ' + $entry + ' ' + $entry.BaseName + ' batch.nochop makebox'
+      #iex "tesseract {0}.tif {0} box.train" -f $entry
+
+      $trainCmd = ".\tesseract {0}.tif {0} box.train" -f $entry
+      Invoke-Expression $trainCmd
+      $trFiles += $entry + ".tr "
+}
+
+echo "Compute the Character Set"
+Invoke-Expression "unicharset_extractor -D $trainDir $boxFiles"
+
+echo "set_unicharset_properties"
+Invoke-Expression ".\set_unicharset_properties -U unicharset -O unicharset --script_dir=$trainDir";
+
+echo "Clustering"
+Invoke-Expression "shapeclustering -F $trainDir\$lang.font_properties -U $trainDir\unicharset $trFiles"
+Invoke-Expression ".\mftraining -F $trainDir\$lang.font_properties -U $trainDir\unicharset -O $trainDir\$lang.unicharset $trFiles"
+move-item -force -path inttemp -destination $trainDir\$lang.inttemp
+move-item -force -path pffmtable -destination $trainDir\$lang.pffmtable
+#move-item -force -path Microfeat -destination $trainDir\$lang.Microfeat
+Invoke-Expression ".\cntraining $trFiles"
+move-item -force -path normproto -destination $trainDir\$lang.normproto
+move-item -force -path shapetable -destination $trainDir\$lang.shapetable
+
+echo "Dictionary Data"
+Invoke-Expression ".\wordlist2dawg $trainDir\$lang.frequent_words_list $trainDir\$lang.freq-dawg $trainDir\$lang.unicharset"
+Invoke-Expression ".\wordlist2dawg $trainDir\$lang.words_list $trainDir\$lang.word-dawg $trainDir\$lang.unicharset"
+if (test-path $trainDir\$lang.punc) {
+    Invoke-Expression ".\wordlist2dawg $trainDir\$lang.punc $trainDir\$lang.punc-dawg $trainDir\$lang.unicharset"
+}
+if (test-path $trainDir\$lang.numbers) {
+    Invoke-Expression ".\wordlist2dawg $trainDir\$lang.numbers $trainDir\$lang.number-dawg $trainDir\$lang.unicharset"
+}
+if (test-path $trainDir\$lang.word.bigrams) {
+    Invoke-Expression ".\wordlist2dawg $trainDir\$lang.word.bigrams $trainDir\$lang.bigram-dawg $trainDir\$lang.unicharset"
+}
+
+echo "The last file (unicharambigs) -- this is to be manually edited"
+if (!(test-path $trainDir\$lang.unicharambigs)) {
+    new-item "$trainDir\$lang.unicharambigs" -type file
+    set-content -path $trainDir\$lang.unicharambigs -value "v1"
+}
+
+echo "Putting it all together"
+Invoke-Expression ".\combine_tessdata $trainDir\$lang."
+
+#>
