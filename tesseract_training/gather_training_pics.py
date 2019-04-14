@@ -68,10 +68,11 @@ def main():
         if user_input == 'q':
             break
         
-        qo_img_path_list = [QUESTION_TRAINING_PICS_PATH + '\\q_' + str(cur_question_img_num + 1) + '.png',
-                            OPTIONS_TRAINING_PICS_PATH  + '\\o_' + str(cur_options_img_num + 1)  + '.png',
-                            OPTIONS_TRAINING_PICS_PATH  + '\\o_' + str(cur_options_img_num + 2)  + '.png',
-                            OPTIONS_TRAINING_PICS_PATH  + '\\o_' + str(cur_options_img_num + 3)  + '.png',]
+        # [language name].[font name].exp[number].[file extension]
+        qo_img_path_list = [QUESTION_TRAINING_PICS_PATH + '\\eng.HQ_Question_Font.exp' + str(cur_question_img_num + 1) + '.png',
+                            OPTIONS_TRAINING_PICS_PATH  + '\\eng.HQ_Options_Font.exp'  + str(cur_options_img_num + 1)  + '.png',
+                            OPTIONS_TRAINING_PICS_PATH  + '\\eng.HQ_Options_Font.exp'  + str(cur_options_img_num + 2)  + '.png',
+                            OPTIONS_TRAINING_PICS_PATH  + '\\eng.HQ_Options_Font.exp'  + str(cur_options_img_num + 3)  + '.png',]
         cur_question_img_num += 1
         cur_options_img_num  += 3
 
