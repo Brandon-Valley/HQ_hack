@@ -46,6 +46,14 @@ def get_current_img_nums():
     
     return cur_question_img_num, cur_option_img_num
     
+    
+    
+    
+    
+#more stuff about ocr training:  http://pretius.com/how-to-prepare-training-files-for-tesseract-ocr-and-improve-characters-recognition/
+                                #https://github.com/Zloy/tesseract-training/blob/master/exp2%20-%20trained/jTessBoxEditor-0.6/tools/train.ps1
+                                #https://github.com/tesseract-ocr/tesseract/blob/master/doc/combine_tessdata.1.asc
+                                
 def main():
 #     onlyfiles = [f for f in listdir(QUESTION_TRAINING_PICS_PATH) if isfile(join(QUESTION_TRAINING_PICS_PATH, f))]
 #     print(onlyfiles)

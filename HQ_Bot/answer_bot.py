@@ -417,7 +417,10 @@ def main():
 		else:
 			try:
 				question = ''
-				question, options = get_question_and_options()
+# 				question, options = get_question_and_options()
+				qo_d = extract_text.read_questions_and_options_from_screen()
+				question = qo_d['question']
+				options = [qo_d['option_1'], qo_d['option_2'], qo_d['option_3']]
 
 # 				start_t = time.time()#```````````````````````````````````````````
 

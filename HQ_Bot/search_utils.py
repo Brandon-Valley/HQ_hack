@@ -48,7 +48,6 @@ def get_text_from_url(url):
 
 
 
-
 def build_occurrence_stat_dict_list(text, terms_l):
     occ_stat_dl = []
     
