@@ -8,7 +8,7 @@ class Solver_Output():
         self.option_3_pts = 0
 
         # 0 - 100, how confident the solver is that it is correct
-        self.confidence = 0
+        self.confidence = 100
         
         # weight of the overall answer from this solver, 0 - 100
         self.weight = 100;
