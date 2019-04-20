@@ -72,6 +72,10 @@ for line_d in db_dl:
     correct_answer = line_d['correct']
 
 
+    if line_cnt != 0 and line_cnt % 180 == 0:
+        print ('sleeping...')
+        time.sleep(30)
+
     solver_start_time = time.time()
     
     solved_output_d = solver_select.solve(question, options, keywords_d, br)

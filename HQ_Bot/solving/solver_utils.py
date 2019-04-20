@@ -13,9 +13,17 @@ import time
         
         
 def get_first_wiki_article_url(query, br):
-    result = br.search(query + 'wiki')
-#     print('in solver utils', result[0])#1`````````````````````````````````````````````````````````````````````````````````````
-    return result[0]['url']
+#     got_result = False
+    while True:
+    
+        result = br.search(query + 'wiki')
+        print('in solver utils', result)#1`````````````````````````````````````````````````````````````````````````````````````
+        
+        if result == []:
+            print('sleeping...')
+            time.sleep(30)
+        else:
+            return result[0]['url']
 
 
 #     try: 
