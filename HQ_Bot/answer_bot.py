@@ -390,12 +390,15 @@ def valid_read(question, options):
 
 
 
-
+KEYWORDS_CSV_PATH = 'keywords.csv'
 
 
 
 def main():
 	times = []
+	
+	keywords_d = utils.get_keywords_d_from_csv(KEYWORDS_CSV_PATH)
+	print(keywords_d)
 	print ('')
 	print ('')
 	print ('')
