@@ -25,8 +25,8 @@ class Basic_Wiki_Match(Solver.Solver):
         return True;
         
         
-    def solve(self, question, options, qo_properties, results_l):
-        url = solver_utils.get_first_wiki_article_url(question)
+    def solve(self, question, options, qo_properties, results_l, br):
+        url = solver_utils.get_first_wiki_article_url(question, br)
         self.solver_output.url_list.append(url) #for testing
         q_wiki_text = solver_utils.get_text_from_url(url)
         

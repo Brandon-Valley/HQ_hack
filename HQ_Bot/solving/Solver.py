@@ -40,7 +40,7 @@ class Solver():
         return False;
         
         
-    def solve(self, question, options, qo_properties, results_l):
+    def solve(self, question, options, qo_properties, results_l, br):
         print('need to implement solve function!')
 
         results_l.append(self.solver_output)

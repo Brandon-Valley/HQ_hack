@@ -13,6 +13,7 @@ import utils
 
 import solver_select
 import solver_utils
+import phantom_js_browser
 
 import time
 import os
@@ -34,7 +35,7 @@ import os
 
 
 
-SOLVED_DB_HEADER_LIST = ['timestamp', 'question #', 'question', 'A', 'B', 'C', 'correct', 'wrong', 'tryed_to_solve', 'right' ]
+SOLVED_DB_HEADER_LIST = ['timestamp', 'question #', 'question', 'A', 'B', 'C', 'correct', 'wrong', 'tryed_to_solve', 'right', 'time' ]
 
 DB_CSV_PATH = 'test_db.csv'#"C:\\Users\\Brandon\\Documents\\Personal_Projects\\HQ_hack\\HQ_qo_database.csv"
 KEYWORDS_CSV_PATH = "C:\\Users\\Brandon\\Documents\\Personal_Projects\\HQ_hack\\HQ_Bot\\keywords.csv"
@@ -43,14 +44,18 @@ SOLVED_DB_CSV_PATH = 'solved_db.csv'
 
 start_time = time.time()
 
-os.remove(SOLVED_DB_CSV_PATH)
+try:
+    os.remove(SOLVED_DB_CSV_PATH)
+except:
+    print('making new solved db csv...')
 
+br = phantom_js_browser.Browser()
 keywords_d = utils.get_keywords_d_from_csv(KEYWORDS_CSV_PATH)
 
 
 
 db_dl = logger.readCSV(DB_CSV_PATH)
-print(db_dl)
+# print(db_dl)
 print('num lines to solve: ', len(db_dl) - 2)
 
 correct_answer_total = 0
@@ -65,9 +70,24 @@ for line_d in db_dl:
                      line_d['C']]
     correct_answer = line_d['correct']
 
+#     if line_cnt % 10  == 0 and line_cnt != 0:
+#         print('sleeping...')
+#         time.sleep(10)
 
+#     solved = False
+#     while(solved == False):
+#         try:
+    solver_start_time = time.time()
+    solved_output_d = solver_select.solve(question, options, keywords_d, br)
+    solver_end_time = time.time()
+    solved = True
+        
+#         except:
+#             print ('http error, waiting...')
+#             time.sleep(10)
     
-    solved_output_d = solver_select.solve(question, options, keywords_d)
+    solver_time = solver_end_time - solver_start_time
+    
     
     tryed_to_solve = '' # empty box if it did try to solve
     if solved_output_d['answer'] == None:
@@ -88,10 +108,11 @@ for line_d in db_dl:
     line_d['right'] = right
     line_d['wrong'] = wrong
     line_d['tryed_to_solve'] = tryed_to_solve
+    line_d['time'] = solver_time
     
     logger.logSingle(line_d, SOLVED_DB_CSV_PATH, wantBackup = False, headerList = SOLVED_DB_HEADER_LIST, overwriteAction = 'append')
     
-    print('solved line:  ', line_cnt + 2)#`````````````````````````````````````````````````````````````````````````
+    print('solved line:  %s,   time = %s' %(line_cnt + 2, time))#`````````````````````````````````````````````````````````````````````````
     line_cnt += 1
     
     
@@ -112,6 +133,7 @@ print('no_try:  ', result_percent_l[2] * 100)
 end_time = time.time()
 print('total_time: ', end_time - start_time)
 
+br.end()
 print('done!')
 
 

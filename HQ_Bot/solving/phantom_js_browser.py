@@ -2,11 +2,12 @@ import time
 from urllib.parse import quote_plus
 from selenium import webdriver
 
+PATH = 'C:/Users/Brandon/Downloads/phantomjs-2.1.1-windows/phantomjs-2.1.1-windows/bin/phantomjs.exe' ## SET YOU PATH TO phantomjs
 
 class Browser:
 
-    def __init__(self, path, initiate=True, implicit_wait_time = 10, explicit_wait_time = 2):
-        self.path = path
+    def __init__(self, path = PATH, initiate=True, implicit_wait_time = 10, explicit_wait_time = 2):
+        self.path = PATH
         self.implicit_wait_time = implicit_wait_time    # http://www.aptuz.com/blog/selenium-implicit-vs-explicit-waits/
         self.explicit_wait_time = explicit_wait_time    # http://www.aptuz.com/blog/selenium-implicit-vs-explicit-waits/
         if initiate:
@@ -14,7 +15,7 @@ class Browser:
         return
 
     def start(self):
-        self.driver = webdriver.PhantomJS(path)
+        self.driver = webdriver.PhantomJS(PATH)
         self.driver.implicitly_wait(self.implicit_wait_time)
         return
 
@@ -54,24 +55,30 @@ class Browser:
         return results
 
 
+def main():
 
-
-path = 'C:/Users/Brandon/Downloads/phantomjs-2.1.1-windows/phantomjs-2.1.1-windows/bin/phantomjs.exe' ## SET YOU PATH TO phantomjs
-br = Browser(path)
-print('here')
-i = 0
-start = time.time()
-
-for x in range(120):
-    url = br.get_search_url('origen of the number ' + str(x))
-    print (url)
-#     results = br.search('origen of the number ' + str(x))
-#     for r in results:
-#         print(r)
-    print('%s    %s' %(i, time.time() - start))
-    i += 1
-        
-end = time.time()
-print('total_time: ', end - start)
-
-br.end()
+    path = 'C:/Users/Brandon/Downloads/phantomjs-2.1.1-windows/phantomjs-2.1.1-windows/bin/phantomjs.exe' ## SET YOU PATH TO phantomjs
+    br = Browser()
+    print('here')
+    i = 0
+    start = time.time()
+    
+    for x in range(120):
+        url = br.get_search_url('origen of the number ' + str(x))
+        print (url)
+    #     results = br.search('origen of the number ' + str(x))
+    #     for r in results:
+    #         print(r)
+        print('%s    %s' %(i, time.time() - start))
+        i += 1
+            
+    end = time.time()
+    print('total_time: ', end - start)
+    
+    br.end()
+    
+    
+    
+    
+if __name__ == "__main__":
+    main()

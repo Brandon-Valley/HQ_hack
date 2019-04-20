@@ -12,7 +12,9 @@ import time
         
         
         
-def get_first_wiki_article_url(query):
+def get_first_wiki_article_url(query, br):
+    url = br.get_search_url(query + 'wiki')
+    return url
 #     try: 
 #         from googlesearch import search 
 #     except ImportError:  
@@ -21,8 +23,8 @@ def get_first_wiki_article_url(query):
     # to search 
 #     query = "which musical act was not signed to motown? + wiki"
        
-    for j in search(query + ' wiki', tld="co.in", num=1, stop=1, pause=0): 
-        return j
+#     for j in search(query + ' wiki', tld="co.in", num=1, stop=1, pause=0): 
+#         return j
     
     
     

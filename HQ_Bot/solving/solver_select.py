@@ -15,11 +15,11 @@ def init_solver_l():
     return solver_l
 
 
-def run_all_appropriate_solvers_in_thier_own_thread(question, options, qo_properties, results_l, appropriate_solver_l):
+def run_all_appropriate_solvers_in_thier_own_thread(question, options, qo_properties, results_l, appropriate_solver_l, br):
     thread_list = []
     
     for solver in appropriate_solver_l:
-        thread_list.append(Thread(target=solver.solve, args=(question, options, qo_properties, results_l)))
+        thread_list.append(Thread(target=solver.solve, args=(question, options, qo_properties, results_l, br)))
 
     for thread in thread_list:
         thread.start()
@@ -28,7 +28,7 @@ def run_all_appropriate_solvers_in_thier_own_thread(question, options, qo_proper
         thread.join()
 
 
-def get_solver_output_l(question, options, keywords_d):
+def get_solver_output_l(question, options, keywords_d, br):
     qo_properties = build_qo_properties.build_qo_properties(question, options, keywords_d)
     solver_l = init_solver_l()
     
@@ -39,7 +39,7 @@ def get_solver_output_l(question, options, keywords_d):
             appropriate_solver_l.append(solver)
             
     results_l = [] # list of all solver outputs
-    run_all_appropriate_solvers_in_thier_own_thread(question, options, qo_properties, results_l, appropriate_solver_l)
+    run_all_appropriate_solvers_in_thier_own_thread(question, options, qo_properties, results_l, appropriate_solver_l, br)
 #     
 #     for solver_output in results_l: #````````````````````````````````````````````````````````````````````
 #         solver_output.print_me()
@@ -81,8 +81,8 @@ def calc_total_solved_output_d(solver_output_l):
 
 
 
-def solve(question, options, keywords_d):
-    solver_output_l = get_solver_output_l(question, options, keywords_d)
+def solve(question, options, keywords_d, br):
+    solver_output_l = get_solver_output_l(question, options, keywords_d, br)
     solved_output_d = calc_total_solved_output_d(solver_output_l)
     return solved_output_d
     

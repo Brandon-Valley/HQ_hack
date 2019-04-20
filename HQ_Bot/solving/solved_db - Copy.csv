@@ -1,40 +1,57 @@
-timestamp,question #,question,A,B,C,correct,wrong,tryed_to_solve,right
-2/2/2018 20:04,1,What did Yankee Doodle stick in his cap?,Feather,Noodle soup,Duck,A,,NO_TRY,
-2/2/2018 20:05,2,"What word completes the phrase: ""Everything but the kitchen""?",Sink,Kaleidoscope,Hogwash,A,,NO_TRY,
-2/2/2018 20:05,3,What was the first theatrical feature film to be completely computer-animated?,Gone with the Wind,Toy Story 2,Toy Story,C,,,RIGHT
-2/2/2018 20:06,4,"Traditionally, an ""amuse-bouche"" arrives right before what part of the meal?",Appetizers,Entrée,Dessert,A,,,RIGHT
-2/2/2018 20:07,5,"In the game of Candy Land, which player goes first?",The youngest,Blue token holder,First to draw a red card,A,,NO_TRY,
-2/2/2018 20:08,6,"In the popular comic strip, what color is Hagar the Horrible's beard?",White,Blond,Red,C,,,RIGHT
-2/2/2018 20:10,7,What spice comes from the crocus flower?,Cloves,Allspice,Saffron,C,,,RIGHT
-2/2/2018 20:11,9,Buying a can of soda will incur a higher tax in which city?,"Santa Barbara, CA","Denver, CO","Seattle, WA",C,,NO_TRY,
-2/2/2018 20:12,10,"Who is credited with coining the phrase: ""For whom the bell tolls""?",John Donne,William Shakespeare,Ernest Hemingway,A,WRONG,,
-2/2/2018 20:12,11,What was the first product to have its barcode scanned at purchase?,Rubik's Cube,Wrigley's chewing gum,Apple IIe,B,,NO_TRY,
-2/2/2018 20:14,12,Catherine de' Medici was present at the performance of the first-ever formal what?,Opera,Commedia dell'arte,Ballet,C,,,RIGHT
-2/3/2018 2:06,1,Parmesan cheese is named for an Italian province called what?,Romana,Yomamma,Parma,C,,,RIGHT
-2/3/2018 2:07,2,Which of these famous fictional animals is a ruminant?,Bambi,Mister Ed,Eeyore,A,,NO_TRY,
-2/3/2018 2:08,3,Which popular root beer brand typically contains caffeine?,Barq's,A&amp;W,Mug,A,,,RIGHT
-2/3/2018 2:09,4,Which of these elements would earn you the highest score in Scrabble?,Oxygen,Xenon,Zinc,A,,NO_TRY,
-2/3/2018 2:09,5,What is the correct spelling of the Pennsylvania town famous for its groundhog?,Punksatawany,Puncksehtany,Punxsutawney,C,,,RIGHT
-2/3/2018 2:11,6,"In 1973, Arabella and Anita became the first members of what species to go into space?",Spider,Fruit fly,Ladybug,A,,NO_TRY,
-2/3/2018 2:12,7,What was the least popular papal name of the 19th century?,Leo,Pius,Gregory,C,,,RIGHT
-2/3/2018 2:12,8,New Mexico exempts which group of people from paying state income taxes?,Hybrid car owners,Centenarians,Registered lobbyists,B,,NO_TRY,
-2/3/2018 2:14,9,Which of these Summer Olympics events uses the longest playing surface?,Fencing,Badminton,Taekwondo,A,,,RIGHT
-2/4/2018 2:04,1,"The college degree ""B.A."" is short for what?",Bachelor of Arts,Booyah Awesome,Beefy Arms,A,,,RIGHT
-2/4/2018 2:05,2,Which country is part of North America?,Norway,Brazil,Canada,C,,,RIGHT
-2/4/2018 2:05,3,Which tool is typically used to clear a clogged pipe?,Claw hammer,Snake,Shovel,B,,NO_TRY,
-2/4/2018 2:07,4,Which of the original Monopoly game pieces was retired last year?,Thimble,Race car,Top hat,A,,,RIGHT
-2/4/2018 2:08,5,Which film director holds a U.S. patent for a T-shirt?,Quentin Tarantino,Francis Ford Coppola,James Cameron,B,,,RIGHT
-2/4/2018 2:09,6,Which food is traditionally a main ingredient in mock turtle soup?,Calf brains,Tortoise meat,Snails,A,,NO_TRY,
-2/4/2018 2:09,7,"Aerosmith's ""Dude (Looks Like a Lady)"" was written about what heavy metal vocalist?",Axl Rose,Bret Michaels,Vince Neil,C,,,RIGHT
-2/4/2018 2:10,8,"Which of these is Venus visibly lacking in Botticelli's ""Birth of Venus""?",Belly button,Left arm,Body hair,C,,NO_TRY,
-2/4/2018 2:11,9,Boston and Buffalo have both been home to major pro sports teams named what?,Giants,Angels,Braves,C,,,RIGHT
-2/4/2018 2:12,10,Which type of animal has been kept as a White House pet by a U.S. president?,Cow,Lemur,Sugar glider,A,,,RIGHT
-2/4/2018 2:13,11,"In the 1800s, a chemistry student making synthetic quinine accidentally created what dye?",Mauve,Periwinkle,Turquoise,A,,,RIGHT
-2/5/2018 20:05,1,Tic-tac-toe is typically played by writing what two symbols?,Yin and yang,+ / -,X / O,C,,NO_TRY,
-2/5/2018 20:06,2,What's the anatomical name for the center of a hurricane?,Shinbone,Pancreas,Eye,C,,,RIGHT
-2/5/2018 20:06,3,Which of these is an actual Winter Olympics event?,Skeleton,Ghostathlon,Frankensteining,A,,,RIGHT
-2/5/2018 20:07,4,A high-tech store with no cashiers recently opened in Seattle under what name?,Amazon Go,Google Shop,Microsoft Zip,A,,,RIGHT
-2/5/2018 20:08,5,"By definition, which of these people is guilty of treason?",Scullion,Poltroon,Quisling,C,,,RIGHT
-2/5/2018 20:09,6,Which of these actors turned down the role of Frasier Crane?,Bob Balaban,John Lithgow,Dan Aykroyd,B,,,RIGHT
-2/5/2018 20:10,7,The Benihana company has a restaurant in which of these places?,China,Aruba,Japan,B,WRONG,,
-2/5/2018 20:10,8,Which has been the last name of a U.S. president AND a British prime minister?,Hayes,Arthur,Wilson,C,WRONG,,
+timestamp,question #,question,A,B,C,correct,wrong,tryed_to_solve,right,time
+2/2/2018 20:04,1,What did Yankee Doodle stick in his cap?,Feather,Noodle soup,Duck,A,,NO_TRY,,2.071872473
+2/2/2018 20:05,2,"What word completes the phrase: ""Everything but the kitchen""?",Sink,Kaleidoscope,Hogwash,A,,NO_TRY,,1.490199804
+2/2/2018 20:05,3,What was the first theatrical feature film to be completely computer-animated?,Gone with the Wind,Toy Story 2,Toy Story,C,,,RIGHT,1.360065222
+2/2/2018 20:06,4,"Traditionally, an ""amuse-bouche"" arrives right before what part of the meal?",Appetizers,Entrée,Dessert,A,,,RIGHT,1.199678421
+2/2/2018 20:07,5,"In the game of Candy Land, which player goes first?",The youngest,Blue token holder,First to draw a red card,A,,NO_TRY,,1.700616837
+2/2/2018 20:08,6,"In the popular comic strip, what color is Hagar the Horrible's beard?",White,Blond,Red,C,,,RIGHT,1.370691061
+2/2/2018 20:10,7,What spice comes from the crocus flower?,Cloves,Allspice,Saffron,C,,,RIGHT,1.615242481
+2/2/2018 20:11,9,Buying a can of soda will incur a higher tax in which city?,"Santa Barbara, CA","Denver, CO","Seattle, WA",C,,NO_TRY,,1.364563227
+2/2/2018 20:12,10,"Who is credited with coining the phrase: ""For whom the bell tolls""?",John Donne,William Shakespeare,Ernest Hemingway,A,WRONG,,,2.211455584
+2/2/2018 20:12,11,What was the first product to have its barcode scanned at purchase?,Rubik's Cube,Wrigley's chewing gum,Apple IIe,B,,NO_TRY,,1.353408337
+2/2/2018 20:14,12,Catherine de' Medici was present at the performance of the first-ever formal what?,Opera,Commedia dell'arte,Ballet,C,,,RIGHT,1.252766132
+2/3/2018 2:06,1,Parmesan cheese is named for an Italian province called what?,Romana,Yomamma,Parma,C,,,RIGHT,1.350364447
+2/3/2018 2:07,2,Which of these famous fictional animals is a ruminant?,Bambi,Mister Ed,Eeyore,A,,NO_TRY,,1.332359314
+2/3/2018 2:08,3,Which popular root beer brand typically contains caffeine?,Barq's,A&amp;W,Mug,A,,,RIGHT,1.542525291
+2/3/2018 2:09,4,Which of these elements would earn you the highest score in Scrabble?,Oxygen,Xenon,Zinc,A,,NO_TRY,,1.420053005
+2/3/2018 2:09,5,What is the correct spelling of the Pennsylvania town famous for its groundhog?,Punksatawany,Puncksehtany,Punxsutawney,C,,,RIGHT,2.49279809
+2/3/2018 2:11,6,"In 1973, Arabella and Anita became the first members of what species to go into space?",Spider,Fruit fly,Ladybug,A,,NO_TRY,,1.940126896
+2/3/2018 2:12,7,What was the least popular papal name of the 19th century?,Leo,Pius,Gregory,C,,,RIGHT,1.42309761
+2/3/2018 2:12,8,New Mexico exempts which group of people from paying state income taxes?,Hybrid car owners,Centenarians,Registered lobbyists,B,,NO_TRY,,1.448601007
+2/3/2018 2:14,9,Which of these Summer Olympics events uses the longest playing surface?,Fencing,Badminton,Taekwondo,A,,,RIGHT,1.495823622
+2/4/2018 2:04,1,"The college degree ""B.A."" is short for what?",Bachelor of Arts,Booyah Awesome,Beefy Arms,A,,,RIGHT,1.319152832
+2/4/2018 2:05,2,Which country is part of North America?,Norway,Brazil,Canada,C,,,RIGHT,1.779698849
+2/4/2018 2:05,3,Which tool is typically used to clear a clogged pipe?,Claw hammer,Snake,Shovel,B,,NO_TRY,,1.30229044
+2/4/2018 2:07,4,Which of the original Monopoly game pieces was retired last year?,Thimble,Race car,Top hat,A,,,RIGHT,1.480640173
+2/4/2018 2:08,5,Which film director holds a U.S. patent for a T-shirt?,Quentin Tarantino,Francis Ford Coppola,James Cameron,B,,,RIGHT,1.335147381
+2/4/2018 2:09,6,Which food is traditionally a main ingredient in mock turtle soup?,Calf brains,Tortoise meat,Snails,A,,NO_TRY,,1.764305592
+2/4/2018 2:09,7,"Aerosmith's ""Dude (Looks Like a Lady)"" was written about what heavy metal vocalist?",Axl Rose,Bret Michaels,Vince Neil,C,,,RIGHT,1.792425871
+2/4/2018 2:10,8,"Which of these is Venus visibly lacking in Botticelli's ""Birth of Venus""?",Belly button,Left arm,Body hair,C,,NO_TRY,,1.319133282
+2/4/2018 2:11,9,Boston and Buffalo have both been home to major pro sports teams named what?,Giants,Angels,Braves,C,,,RIGHT,1.67973423
+2/4/2018 2:12,10,Which type of animal has been kept as a White House pet by a U.S. president?,Cow,Lemur,Sugar glider,A,,,RIGHT,2.075644493
+2/4/2018 2:13,11,"In the 1800s, a chemistry student making synthetic quinine accidentally created what dye?",Mauve,Periwinkle,Turquoise,A,,,RIGHT,1.380654573
+2/5/2018 20:05,1,Tic-tac-toe is typically played by writing what two symbols?,Yin and yang,+ / -,X / O,C,,NO_TRY,,1.484197378
+2/5/2018 20:06,2,What's the anatomical name for the center of a hurricane?,Shinbone,Pancreas,Eye,C,,,RIGHT,1.5479424
+2/5/2018 20:06,3,Which of these is an actual Winter Olympics event?,Skeleton,Ghostathlon,Frankensteining,A,,,RIGHT,1.36610508
+2/5/2018 20:07,4,A high-tech store with no cashiers recently opened in Seattle under what name?,Amazon Go,Google Shop,Microsoft Zip,A,,,RIGHT,1.507789612
+2/5/2018 20:08,5,"By definition, which of these people is guilty of treason?",Scullion,Poltroon,Quisling,C,,,RIGHT,1.261514664
+2/5/2018 20:09,6,Which of these actors turned down the role of Frasier Crane?,Bob Balaban,John Lithgow,Dan Aykroyd,B,,,RIGHT,1.359688997
+2/5/2018 20:10,7,The Benihana company has a restaurant in which of these places?,China,Aruba,Japan,B,WRONG,,,1.49781251
+2/5/2018 20:10,8,Which has been the last name of a U.S. president AND a British prime minister?,Hayes,Arthur,Wilson,C,WRONG,,,1.916525364
+2/5/2018 20:12,10,In what medium was Superman's Kryptonite weakness introduced?,The radio series,The 1978 movie,Action Comics #64,A,,NO_TRY,,1.589699745
+2/5/2018 20:15,12,What costume was worn by the original lead singer of the Village People?,Cowboy,Policeman,Construction worker,B,WRONG,,,1.453062534
+2/6/2018 2:05,1,A spork is a utensil that combines what two things?,Spam / pork,Sponge / cork,Spoon / fork,C,,NO_TRY,,1.332294941
+2/6/2018 2:06,2,"On a compass, what does the letter N typically stand for?",Norbit,North,Nordic,B,,,RIGHT,1.426906109
+2/6/2018 2:06,3,"In 2017, what did Twitter do to its 140-character limit on tweets?",Double it,Halve it,Reduce it to 15,A,,NO_TRY,,1.374262333
+2/6/2018 2:08,4,"What popular corn chip loosely translates to ""little golden things"" in Spanish?",Tostitos,Fritos,Doritos,C,,NO_TRY,,1.143798828
+2/6/2018 2:12,5,U.S. air traffic controllers refer to the plane the Pope travels on by what official call sign?,Shepherd One,Il Papa,Air Vatican,A,,NO_TRY,,1.476475
+2/6/2018 2:12,6,What zodiac sign features a creature that defends itself with an aculeus?,Cancer,Sagittarius,Scorpio,C,WRONG,,,1.317894459
+2/6/2018 2:13,7,Who was the first U.S. president to enjoy indoor plumbing at the White House?,Millard Fillmore,Andrew Jackson,John Adams,B,WRONG,,,2.042485714
+2/6/2018 2:14,8,"From 2000 to 2002, what MLB team's stadium was named for a company that no longer exists?",Angels,Rays,Astros,C,WRONG,,,1.444509029
+2/6/2018 2:15,9,The lunar module for the Apollo 10 moon mission was nicknamed what?,Eagle,Beagle,Snoopy,C,,,RIGHT,1.745388985
+2/6/2018 2:16,11,"After Prince Edward Island, what is Canada's most densely populated province?",New Brunswick,Ontario,Nova Scotia,C,WRONG,,,3.881963253
+2/6/2018 20:04,1,What is a common remedy for dehydration?,Drinking water,Running a marathon,Slaying a hydra,A,,NO_TRY,,2.903622627
+2/6/2018 20:07,2,"The band that recorded ""September"" is named ""Earth, Wind &amp;"" what?",Frederick,Fire,Flagellum,B,,NO_TRY,,3.873779535
+2/7/2018 2:05,1,"In the classic fairy tale, who is Little Red Riding Hood's enemy?",Big Baller Brand,Big Lebowski,Big Bad Wolf,C,,NO_TRY,,3.873862267
+2/7/2018 2:05,2,Pantene Pro-V and Garnier Fructis are popular types of what?,ShamWow,Shampoo,Champagne,B,,NO_TRY,,3.695986271
+2/7/2018 2:06,3,A bed that folds up into the wall is commonly known as what?,Sully bed,Fitzy bed,Murphy bed,C,,NO_TRY,,2.61355567
