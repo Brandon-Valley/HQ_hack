@@ -15,6 +15,8 @@ import solver_select
 import solver_utils
 
 import time
+import os
+
 
 
 
@@ -40,6 +42,8 @@ KEYWORDS_CSV_PATH = "C:\\Users\\Brandon\\Documents\\Personal_Projects\\HQ_hack\\
 SOLVED_DB_CSV_PATH = 'solved_db.csv'
 
 start_time = time.time()
+
+os.remove(SOLVED_DB_CSV_PATH)
 
 keywords_d = utils.get_keywords_d_from_csv(KEYWORDS_CSV_PATH)
 
