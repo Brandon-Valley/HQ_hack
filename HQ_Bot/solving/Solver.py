@@ -14,6 +14,9 @@ class Solver_Output():
         
         # weight of the overall answer from this solver, 0 - 100
         self.weight = 100;
+        
+        # info for testion
+        self.url_list = []
     
     def print_me(self):
         indent = '    '
@@ -23,6 +26,7 @@ class Solver_Output():
         print(indent + 'option_3_pts:  ' + str (self.option_3_pts))
         print(indent + 'confidence:    ' + str (self.confidence))
         print(indent + 'weight:        ' + str (self.weight))
+        print(indent + 'url_list:      ' + str (self.url_list))
 
 
 

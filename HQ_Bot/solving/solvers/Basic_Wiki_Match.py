@@ -26,17 +26,39 @@ class Basic_Wiki_Match(Solver.Solver):
         
         
     def solve(self, question, options, qo_properties, results_l):
-        q_wiki_text = solver_utils.get_text_from_first_wiki_article(question)
+        url = solver_utils.get_first_wiki_article_url(question)
+        self.solver_output.url_list.append(url) #for testing
+        q_wiki_text = solver_utils.get_text_from_url(url)
+        
+#         q_wiki_text = solver_utils.get_text_from_first_wiki_article(question)
         num_occ_l = solver_utils.build_num_occurrence_l(q_wiki_text, options)
         
         # most simple solver, only return a confident answer if only one option appeared in text
-        if (num_occ_l.count(0) == 2):
-            self.solver_output.option_1_pts = solver_utils.is_gt_zero(num_occ_l[0]) * 100
-            self.solver_output.option_2_pts = solver_utils.is_gt_zero(num_occ_l[1]) * 100
-            self.solver_output.option_3_pts = solver_utils.is_gt_zero(num_occ_l[2]) * 100
-        else:
+        # only one of the options showed up in wiki article = full confidence and full points to option that showed up
+        if   (num_occ_l.count(0) == 2):
+            self.solver_output.confidence = 100
+        # 2 of the options showed up in wiki article, cut confidence
+        elif (num_occ_l.count(0) == 1):
+            self.solver_output.confidence = 50
+        # all of them showed up in article, cut confidence again
+        elif (num_occ_l.count(0) == 1):
+            self.solver_output.confidence = 25
+        # none showed up
+        elif (num_occ_l.count(0) == 3):
             self.solver_output.confidence = 0
-        
+
+        num_occ_percent_l = solver_utils.num_occurrence_percent_l(num_occ_l)
+#         print(num_occ_percent_l)#```````````````````````````````````````````````````````````````````
+            
+#         self.solver_output.option_1_pts = solver_utils.is_gt_zero(num_occ_l[0]) * 100
+#         self.solver_output.option_2_pts = solver_utils.is_gt_zero(num_occ_l[1]) * 100
+#         self.solver_output.option_3_pts = solver_utils.is_gt_zero(num_occ_l[2]) * 100
+
+        # assign points proportional to number of occurrences
+        self.solver_output.option_1_pts = num_occ_percent_l[0] * 100
+        self.solver_output.option_2_pts = num_occ_percent_l[1] * 100
+        self.solver_output.option_3_pts = num_occ_percent_l[2] * 100
+    
         results_l.append(self.solver_output)
     
     

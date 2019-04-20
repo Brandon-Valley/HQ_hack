@@ -17,10 +17,15 @@ import solver_select
 
 
 
+# solver ideas
+# -  if question contains the word 'phrase' and has a quoted phrase, google 'qusetion + phrases.org.uk" and search occurances
+#    - would only apply to 0.011% 
 
 
 
-
+# interesting questions:
+# 10 - the quote is by john but is also the name of a book by hemmingway, maybe quara search?
+#      - maybe search for popular phrase, 2nd article or question:  https://www.phrases.org.uk/meanings/for-whom-the-bell-tolls.html
 
 
 
@@ -30,7 +35,7 @@ import solver_select
 DB_CSV_PATH = "C:\\Users\\Brandon\\Documents\\Personal_Projects\\HQ_hack\\HQ_qo_database.csv"
 KEYWORDS_CSV_PATH = "C:\\Users\\Brandon\\Documents\\Personal_Projects\\HQ_hack\\HQ_Bot\\keywords.csv"
 
-DB_LINE_NUM = 9
+DB_LINE_NUM = 10
 
 
 
