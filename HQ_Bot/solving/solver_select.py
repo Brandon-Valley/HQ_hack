@@ -1,6 +1,8 @@
 from threading import Thread
+import operator
 
 import build_qo_properties
+import solver_utils
 
 from solvers import Basic_Wiki_Match
 
@@ -46,17 +48,52 @@ def get_solver_output_l(question, options, keywords_d):
 
 
 
+ANSWER_INDEX_LIST = ['A', 'B', 'C']
+
+def get_answer(options_percent_totals_l):
+    if options_percent_totals_l == [0,0,0]:
+        return None
+    
+    max_index, max_value = max(enumerate(options_percent_totals_l), key=operator.itemgetter(1))
+    return ANSWER_INDEX_LIST[max_index]
+    
+
+
+
+def calc_total_solved_output_d(solver_output_l):    
+    options_totals_l = [0,0,0]
+    
+    for solver_output in solver_output_l:
+        options_totals_l[0] = solver_output.option_1_pts * ( solver_output.confidence / 100 )
+        options_totals_l[1] = solver_output.option_2_pts * ( solver_output.confidence / 100 )
+        options_totals_l[2] = solver_output.option_3_pts * ( solver_output.confidence / 100 )
+        
+    options_percent_totals_l = solver_utils.num_occurrence_percent_l(options_totals_l)
+    
+    solved_output_d = {'option_1_pts': options_percent_totals_l[0] * 100,
+                       'option_2_pts': options_percent_totals_l[1] * 100,
+                       'option_3_pts': options_percent_totals_l[2] * 100,
+                       'answer'      : get_answer(options_percent_totals_l)}
+
+    return solved_output_d
+    
+
+
+
+
 def solve(question, options, keywords_d):
     solver_output_l = get_solver_output_l(question, options, keywords_d)
+    solved_output_d = calc_total_solved_output_d(solver_output_l)
+    return solved_output_d
     
-    for solver_output in solver_output_l: #````````````````````````````````````````````````````````````````````
-        solver_output.print_me()
+
 
 
 def main():
-
-    options = ['Minneapolis', 'Maryland', 'Miami']    
-    solve('what is a "baseball"  and a "cat"', options, {'negative': ['not']})
+    question = 'Who is credited with coining the phrase: "For whom the bell tolls"?'
+    options = ['John Donne', 'Maryland', 'Ernest Hemingway']    
+    solved_output_d = solve(question, options, {'negative': ['not']})
+    print(solved_output_d)
 
 
 

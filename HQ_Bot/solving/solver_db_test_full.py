@@ -35,19 +35,18 @@ import solver_select
 DB_CSV_PATH = "C:\\Users\\Brandon\\Documents\\Personal_Projects\\HQ_hack\\HQ_qo_database.csv"
 KEYWORDS_CSV_PATH = "C:\\Users\\Brandon\\Documents\\Personal_Projects\\HQ_hack\\HQ_Bot\\keywords.csv"
 
-DB_LINE_NUM = 10
-
+keywords_d = utils.get_keywords_d_from_csv(KEYWORDS_CSV_PATH)
 
 
 db_dl = logger.readCSV(DB_CSV_PATH)
 
-question = db_dl[DB_LINE_NUM - 2]['question']
-options = [db_dl[DB_LINE_NUM - 2]['A'],
-           db_dl[DB_LINE_NUM - 2]['B'],
-           db_dl[DB_LINE_NUM - 2]['C']]
+for line_d in db_dl:
+    question = line_d['question']
+    options = [line_d['A'],
+               line_d['B'],
+               line_d['C']]
 
-# print(db_dl[DB_LINE_NUM - 2])
-keywords_d = utils.get_keywords_d_from_csv(KEYWORDS_CSV_PATH)
+
 
 solver_output_l = solver_select.get_solver_output_l(question, options, keywords_d)
 
