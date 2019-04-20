@@ -12,7 +12,9 @@ import logger
 import utils
 
 import solver_select
+import solver_utils
 
+import time
 
 
 
@@ -30,38 +32,99 @@ import solver_select
 
 
 
+SOLVED_DB_HEADER_LIST = ['timestamp', 'question #', 'question', 'A', 'B', 'C', 'correct', 'wrong', 'tryed_to_solve', 'right' ]
 
-
-DB_CSV_PATH = "C:\\Users\\Brandon\\Documents\\Personal_Projects\\HQ_hack\\HQ_qo_database.csv"
+DB_CSV_PATH = 'test_db.csv'#"C:\\Users\\Brandon\\Documents\\Personal_Projects\\HQ_hack\\HQ_qo_database.csv"
 KEYWORDS_CSV_PATH = "C:\\Users\\Brandon\\Documents\\Personal_Projects\\HQ_hack\\HQ_Bot\\keywords.csv"
+
+SOLVED_DB_CSV_PATH = 'solved_db.csv'
+
+start_time = time.time()
 
 keywords_d = utils.get_keywords_d_from_csv(KEYWORDS_CSV_PATH)
 
 
+
 db_dl = logger.readCSV(DB_CSV_PATH)
+print(db_dl)
+print('num lines to solve: ', len(db_dl) - 2)
 
+correct_answer_total = 0
+wrong_answer_total   = 0
+no_try_total         = 0
+
+line_cnt = 0
 for line_d in db_dl:
-    question = line_d['question']
-    options = [line_d['A'],
-               line_d['B'],
-               line_d['C']]
+    question       = line_d['question']
+    options       = [line_d['A'],
+                     line_d['B'],
+                     line_d['C']]
+    correct_answer = line_d['correct']
 
 
+    
+    solved_output_d = solver_select.solve(question, options, keywords_d)
+    
+    tryed_to_solve = '' # empty box if it did try to solve
+    if solved_output_d['answer'] == None:
+        tryed_to_solve = 'NO_TRY'
+        no_try_total += 1
+        
+    wrong = ''
+    right = ''
+    if solved_output_d['answer'] != None:
+        if solved_output_d['answer'] == correct_answer:
+            right = 'RIGHT'
+            correct_answer_total += 1
+        else:
+            wrong = 'WRONG'
+            wrong_answer_total += 1
+        
 
-solver_output_l = solver_select.get_solver_output_l(question, options, keywords_d)
+    line_d['right'] = right
+    line_d['wrong'] = wrong
+    line_d['tryed_to_solve'] = tryed_to_solve
+    
+    logger.logSingle(line_d, SOLVED_DB_CSV_PATH, wantBackup = False, headerList = SOLVED_DB_HEADER_LIST, overwriteAction = 'append')
+    
+    print('solved line:  ', line_cnt + 2)#`````````````````````````````````````````````````````````````````````````
+    line_cnt += 1
+    
+    
+# urllib.error.HTTPError: HTTP Error 503: Service Unavailable
+    
+    
+# for dict in db_dl:
+#     print('tryed_to_solve: ', dict['tryed_to_solve'])
+    
+# logger.logList(db_dl, SOLVED_DB_CSV_PATH, wantBackup = False, headerList = SOLVED_DB_HEADER_LIST, overwriteAction = 'overwrite')
+    
+
+result_percent_l = solver_utils.num_occurrence_percent_l([correct_answer_total, wrong_answer_total, no_try_total])
+print('correct: ', result_percent_l[0] * 100)
+print('wrong:   ', result_percent_l[1] * 100)
+print('no_try:  ', result_percent_l[2] * 100)
+
+end_time = time.time()
+print('total_time: ', end_time - start_time)
+
+print('done!')
+
+
+# solver_output_l = solver_select.get_solver_output_l(question, options, keywords_d)
 
 
 #show output of test
-print('question:  ', question)
-print('')
-print('option_1:  ', options[0])
-print('option_2:  ', options[1])
-print('option_3:  ', options[2])
-print('')
-
-
-for solver_output in solver_output_l: #````````````````````````````````````````````````````````````````````
-    solver_output.print_me()
+# print('question:  ', question)
+# print('')
+# print('option_1:  ', options[0])
+# print('option_2:  ', options[1])
+# print('option_3:  ', options[2])
+# print('')
+# 
+# 
+# for solver_output in solver_output_l: #````````````````````````````````````````````````````````````````````
+#     solver_output.print_me()
 
 
 

@@ -40,6 +40,7 @@ DB_LINE_NUM =10
 
 
 db_dl = logger.readCSV(DB_CSV_PATH)
+print(db_dl)
 
 question = db_dl[DB_LINE_NUM - 2]['question']
 options = [db_dl[DB_LINE_NUM - 2]['A'],
