@@ -12,6 +12,7 @@ import logger
 import utils
 
 import solver_select
+import phantom_js_browser
 
 
 
@@ -35,9 +36,9 @@ import solver_select
 DB_CSV_PATH = "C:\\Users\\Brandon\\Documents\\Personal_Projects\\HQ_hack\\HQ_qo_database.csv"
 KEYWORDS_CSV_PATH = "C:\\Users\\Brandon\\Documents\\Personal_Projects\\HQ_hack\\HQ_Bot\\keywords.csv"
 
-DB_LINE_NUM =10  
+DB_LINE_NUM =193
 
-
+br = phantom_js_browser.Browser()
 
 db_dl = logger.readCSV(DB_CSV_PATH)
 print(db_dl)
@@ -50,7 +51,7 @@ options = [db_dl[DB_LINE_NUM - 2]['A'],
 # print(db_dl[DB_LINE_NUM - 2])
 keywords_d = utils.get_keywords_d_from_csv(KEYWORDS_CSV_PATH)
 
-solver_output_l = solver_select.get_solver_output_l(question, options, keywords_d)
+solver_output_l = solver_select.get_solver_output_l(question, options, keywords_d, br)
 
 
 #show output of test

@@ -1,114 +1,203 @@
 timestamp,question #,question,A,B,C,correct,wrong,tryed_to_solve,right,time
-2/2/2018 20:04,1,What did Yankee Doodle stick in his cap?,Feather,Noodle soup,Duck,A,,NO_TRY,,0.7226076126098633
-2/2/2018 20:05,2,"What word completes the phrase: ""Everything but the kitchen""?",Sink,Kaleidoscope,Hogwash,A,,NO_TRY,,0.676447868347168
-2/2/2018 20:05,3,What was the first theatrical feature film to be completely computer-animated?,Gone with the Wind,Toy Story 2,Toy Story,C,,NO_TRY,,0.6176168918609619
-2/2/2018 20:06,4,"Traditionally, an ""amuse-bouche"" arrives right before what part of the meal?",Appetizers,Entrée,Dessert,A,,NO_TRY,,0.562300443649292
-2/2/2018 20:07,5,"In the game of Candy Land, which player goes first?",The youngest,Blue token holder,First to draw a red card,A,,NO_TRY,,0.9268035888671875
-2/2/2018 20:08,6,"In the popular comic strip, what color is Hagar the Horrible's beard?",White,Blond,Red,C,,NO_TRY,,0.5284914970397949
-2/2/2018 20:10,7,What spice comes from the crocus flower?,Cloves,Allspice,Saffron,C,,,RIGHT,1.4634573459625244
-2/2/2018 20:11,9,Buying a can of soda will incur a higher tax in which city?,"Santa Barbara, CA","Denver, CO","Seattle, WA",C,,NO_TRY,,0.7546257972717285
-2/2/2018 20:12,10,"Who is credited with coining the phrase: ""For whom the bell tolls""?",John Donne,William Shakespeare,Ernest Hemingway,A,WRONG,,,1.8619201183319092
-2/2/2018 20:12,11,What was the first product to have its barcode scanned at purchase?,Rubik's Cube,Wrigley's chewing gum,Apple IIe,B,,NO_TRY,,0.7938053607940674
-2/2/2018 20:14,12,Catherine de' Medici was present at the performance of the first-ever formal what?,Opera,Commedia dell'arte,Ballet,C,,NO_TRY,,0.593548059463501
-2/3/2018 2:06,1,Parmesan cheese is named for an Italian province called what?,Romana,Yomamma,Parma,C,,,RIGHT,0.5652866363525391
-2/3/2018 2:07,2,Which of these famous fictional animals is a ruminant?,Bambi,Mister Ed,Eeyore,A,,NO_TRY,,0.5021672248840332
-2/3/2018 2:08,3,Which popular root beer brand typically contains caffeine?,Barq's,A&amp;W,Mug,A,,,RIGHT,0.5607328414916992
-2/3/2018 2:09,4,Which of these elements would earn you the highest score in Scrabble?,Oxygen,Xenon,Zinc,A,,NO_TRY,,0.5614821910858154
-2/3/2018 2:09,5,What is the correct spelling of the Pennsylvania town famous for its groundhog?,Punksatawany,Puncksehtany,Punxsutawney,C,,,RIGHT,1.1370279788970947
-2/3/2018 2:11,6,"In 1973, Arabella and Anita became the first members of what species to go into space?",Spider,Fruit fly,Ladybug,A,,NO_TRY,,0.5730528831481934
-2/3/2018 2:12,7,What was the least popular papal name of the 19th century?,Leo,Pius,Gregory,C,,NO_TRY,,0.9059562683105469
-2/3/2018 2:12,8,New Mexico exempts which group of people from paying state income taxes?,Hybrid car owners,Centenarians,Registered lobbyists,B,,NO_TRY,,0.8432738780975342
-2/3/2018 2:14,9,Which of these Summer Olympics events uses the longest playing surface?,Fencing,Badminton,Taekwondo,A,,NO_TRY,,1.2691190242767334
-2/4/2018 2:04,1,"The college degree ""B.A."" is short for what?",Bachelor of Arts,Booyah Awesome,Beefy Arms,A,,NO_TRY,,1.2086429595947266
-2/4/2018 2:05,2,Which country is part of North America?,Norway,Brazil,Canada,C,,NO_TRY,,1.3303909301757812
-2/4/2018 2:05,3,Which tool is typically used to clear a clogged pipe?,Claw hammer,Snake,Shovel,B,,NO_TRY,,1.035585880279541
-2/4/2018 2:07,4,Which of the original Monopoly game pieces was retired last year?,Thimble,Race car,Top hat,A,,NO_TRY,,0.7939746379852295
-2/4/2018 2:08,5,Which film director holds a U.S. patent for a T-shirt?,Quentin Tarantino,Francis Ford Coppola,James Cameron,B,,NO_TRY,,1.1588139533996582
-2/4/2018 2:09,6,Which food is traditionally a main ingredient in mock turtle soup?,Calf brains,Tortoise meat,Snails,A,,NO_TRY,,0.8572218418121338
-2/4/2018 2:09,7,"Aerosmith's ""Dude (Looks Like a Lady)"" was written about what heavy metal vocalist?",Axl Rose,Bret Michaels,Vince Neil,C,,NO_TRY,,1.3891091346740723
-2/4/2018 2:10,8,"Which of these is Venus visibly lacking in Botticelli's ""Birth of Venus""?",Belly button,Left arm,Body hair,C,,NO_TRY,,0.8599832057952881
-2/4/2018 2:11,9,Boston and Buffalo have both been home to major pro sports teams named what?,Giants,Angels,Braves,C,,NO_TRY,,0.8949892520904541
-2/4/2018 2:12,10,Which type of animal has been kept as a White House pet by a U.S. president?,Cow,Lemur,Sugar glider,A,,NO_TRY,,2.1237123012542725
-2/4/2018 2:13,11,"In the 1800s, a chemistry student making synthetic quinine accidentally created what dye?",Mauve,Periwinkle,Turquoise,A,,NO_TRY,,0.7385902404785156
-2/5/2018 20:05,1,Tic-tac-toe is typically played by writing what two symbols?,Yin and yang,+ / -,X / O,C,,NO_TRY,,0.9807369709014893
-2/5/2018 20:06,2,What's the anatomical name for the center of a hurricane?,Shinbone,Pancreas,Eye,C,,NO_TRY,,0.9139502048492432
-2/5/2018 20:06,3,Which of these is an actual Winter Olympics event?,Skeleton,Ghostathlon,Frankensteining,A,,NO_TRY,,0.7061159610748291
-2/5/2018 20:07,4,A high-tech store with no cashiers recently opened in Seattle under what name?,Amazon Go,Google Shop,Microsoft Zip,A,,,RIGHT,0.827430009841919
-2/5/2018 20:08,5,"By definition, which of these people is guilty of treason?",Scullion,Poltroon,Quisling,C,,NO_TRY,,0.8699641227722168
-2/5/2018 20:09,6,Which of these actors turned down the role of Frasier Crane?,Bob Balaban,John Lithgow,Dan Aykroyd,B,,NO_TRY,,0.9209609031677246
-2/5/2018 20:10,7,The Benihana company has a restaurant in which of these places?,China,Aruba,Japan,B,WRONG,,,1.1907753944396973
-2/5/2018 20:10,8,Which has been the last name of a U.S. president AND a British prime minister?,Hayes,Arthur,Wilson,C,,NO_TRY,,1.8216054439544678
-2/5/2018 20:12,10,In what medium was Superman's Kryptonite weakness introduced?,The radio series,The 1978 movie,Action Comics #64,A,,NO_TRY,,1.2755329608917236
-2/5/2018 20:15,12,What costume was worn by the original lead singer of the Village People?,Cowboy,Policeman,Construction worker,B,,NO_TRY,,0.8663320541381836
-2/6/2018 2:05,1,A spork is a utensil that combines what two things?,Spam / pork,Sponge / cork,Spoon / fork,C,,NO_TRY,,0.7248268127441406
-2/6/2018 2:06,2,"On a compass, what does the letter N typically stand for?",Norbit,North,Nordic,B,,NO_TRY,,0.9076542854309082
-2/6/2018 2:06,3,"In 2017, what did Twitter do to its 140-character limit on tweets?",Double it,Halve it,Reduce it to 15,A,,NO_TRY,,0.7794575691223145
-2/6/2018 2:08,4,"What popular corn chip loosely translates to ""little golden things"" in Spanish?",Tostitos,Fritos,Doritos,C,,,RIGHT,0.7235414981842041
-2/6/2018 2:12,5,U.S. air traffic controllers refer to the plane the Pope travels on by what official call sign?,Shepherd One,Il Papa,Air Vatican,A,,NO_TRY,,0.9857604503631592
-2/6/2018 2:12,6,What zodiac sign features a creature that defends itself with an aculeus?,Cancer,Sagittarius,Scorpio,C,,NO_TRY,,2.0944905281066895
-2/6/2018 2:13,7,Who was the first U.S. president to enjoy indoor plumbing at the White House?,Millard Fillmore,Andrew Jackson,John Adams,B,,NO_TRY,,1.9824497699737549
-2/6/2018 2:14,8,"From 2000 to 2002, what MLB team's stadium was named for a company that no longer exists?",Angels,Rays,Astros,C,,NO_TRY,,0.9392774105072021
-2/6/2018 2:15,9,The lunar module for the Apollo 10 moon mission was nicknamed what?,Eagle,Beagle,Snoopy,C,,,RIGHT,0.7475752830505371
-2/6/2018 2:16,11,"After Prince Edward Island, what is Canada's most densely populated province?",New Brunswick,Ontario,Nova Scotia,C,,NO_TRY,,0.8368961811065674
-2/6/2018 20:04,1,What is a common remedy for dehydration?,Drinking water,Running a marathon,Slaying a hydra,A,,NO_TRY,,0.7803654670715332
-2/6/2018 20:07,2,"The band that recorded ""September"" is named ""Earth, Wind &amp;"" what?",Frederick,Fire,Flagellum,B,,,RIGHT,0.7482612133026123
-2/7/2018 2:05,1,"In the classic fairy tale, who is Little Red Riding Hood's enemy?",Big Baller Brand,Big Lebowski,Big Bad Wolf,C,,NO_TRY,,0.7530720233917236
-2/7/2018 2:05,2,Pantene Pro-V and Garnier Fructis are popular types of what?,ShamWow,Shampoo,Champagne,B,,NO_TRY,,0.7732295989990234
-2/7/2018 2:06,3,A bed that folds up into the wall is commonly known as what?,Sully bed,Fitzy bed,Murphy bed,C,,NO_TRY,,1.4818494319915771
-2/7/2018 2:07,4,Which of these colleges does NOT have a physical location?,Electoral College,Deep Springs College,Hampshire College,A,,NO_TRY,,1.2140882015228271
-2/7/2018 2:08,5,Which of these desserts is often made with ladyfingers?,Tiramisu,Magdalena,Financier,A,,NO_TRY,,1.4740159511566162
-2/7/2018 2:09,6,Which of these is a real illness that affects rabbits?,Ruffles,Fluffles,Snuffles,C,,NO_TRY,,0.7306349277496338
-2/7/2018 2:09,7,The Doors are named after a famous essay by the author of what iconic novel?,Lolita,On the Road,Brave New World,C,,NO_TRY,,1.102588176727295
-2/7/2018 2:10,8,Which TV news host once wrote about his first date with Monica Lewinsky?,Jake Tapper,Van Jones,Chris Hayes,A,,NO_TRY,,0.8741884231567383
-2/7/2018 2:11,9,"The famous German phrase ""Sturm und Drang"" comes from what?",Poem,Novel,Play,C,,,RIGHT,1.1474056243896484
-2/7/2018 2:12,10,In which African country is English NOT the official language?,Sierra Leone,Liberia,Chad,C,,NO_TRY,,0.7568435668945312
-2/7/2018 2:13,11,Which ‘90s movie is an anagram of the original book title which the film is based on?,Free Willy,October Sky,Jumanji,B,,NO_TRY,,0.8434672355651855
-2/7/2018 2:14,12,Which legendary music producer is closely related to former President Jimmy Carter?,Jeff Lynne,Brian Eno,Berry Gordy,C,,NO_TRY,,1.114272117614746
-2/7/2018 20:05,1,"Which of these websites is an online database for movies, television and video games?",Petfinder,IMDb,Yelp,B,,,RIGHT,1.433351993560791
-2/7/2018 20:06,2,What does bicameral mean?,Two camels,Two cameras,Two chambers,C,,NO_TRY,,1.2550623416900635
-2/7/2018 20:07,3,A galleon is an old-fashioned type of what?,Ship,Measurement,Dress,A,,NO_TRY,,1.0725009441375732
-2/7/2018 20:08,4,"What male singing voice type is higher than a bass, but lower than a tenor?",Baritone,Countertenor,Sopranist,A,,NO_TRY,,0.8249597549438477
-2/7/2018 20:09,5,Which of these is NOT a real berry?,Buffaloberry,Iceberry,Cloudberry,B,,NO_TRY,,0.6989827156066895
-2/7/2018 20:10,6,George Washington Carver is famous for his scientific work on what subject?,Soil depletion,Irrigation technology,Food packaging,A,,NO_TRY,,0.8069357872009277
-2/7/2018 20:11,7,Which of these is NOT believed to be a function of the uvula?,Taste,Speech,Lubricant,A,,NO_TRY,,0.7023942470550537
-2/7/2018 20:12,8,Which of these baseball legends was a first-ballot Hall of Famer?,Joe DiMaggio,Cy Young,Mickey Mantle,C,,NO_TRY,,0.7574348449707031
-2/7/2018 20:15,9,Which of these things can be mathematically described as an oblate spheroid?,NFL football,Unshelled peanut,Planet Earth,C,,NO_TRY,,0.8429925441741943
-2/8/2018 2:04,1,"""Fro-yo"" is short for what?",Frolicking yokels,Frozen yogurt,Frog yoga,B,,NO_TRY,,0.6938786506652832
-2/8/2018 2:06,3,What is the name of a Japanese art form that features trees grown in containers?,Kawaii,Bonsai,Manga,B,,,RIGHT,2.1369855403900146
-2/8/2018 2:06,4,What college football team's chant is also likely to be heard on a farm?,Arkansas Razorbacks,Ole Miss Rebels,Penn State Lions,A,,NO_TRY,,1.7019155025482178
-2/8/2018 2:08,5,"What legendary ""Buffalo Bill's Wild West"" star had a negative-sounding nickname?",Annie Oakley,May Lillie,Martha Jane Cannary,C,,NO_TRY,,1.255525827407837
-2/8/2018 2:09,6,Where did Bernese Mountain Dogs originate?,Myanmar,Switzerland,Afghanistan,B,,NO_TRY,,0.7249729633331299
-2/8/2018 2:10,7,Which fashion designer is grandmother to a literal princess?,Diane von Fürstenberg,Rei Kawakubo,Vivienne Westwood,A,,NO_TRY,,0.9383125305175781
-2/8/2018 2:11,8,Which film features the same kind of talking animal as the Old Testament book Numbers?,The Lion King,Finding Nemo,Shrek,C,,NO_TRY,,0.8170018196105957
-2/8/2018 2:13,10,In which country is GeoCities still up and running?,Canada,Japan,Australia,B,,,RIGHT,0.9782323837280273
-2/8/2018 2:14,11,"Before the lyrics are sung, how many finger snaps are heard in the ""Addams Family"" theme song?",12 snaps,6 snaps,8 snaps,A,,NO_TRY,,0.7519285678863525
-2/8/2018 20:03,1,"Which of these is the name of a princess in Disney's ""Frozen""?",Frosier,Jack Frost,Elsa,C,,,RIGHT,1.4926066398620605
-2/8/2018 20:04,2,The Olympic logo features what combination of shapes?,Two triangles,Five rings,Seven parabolas,B,,NO_TRY,,1.194169521331787
-2/8/2018 20:05,3,"The Italian cooking term ""al dente"" means what?",Firm,With butter,Salted,A,,NO_TRY,,1.2239105701446533
-2/8/2018 20:06,4,"Which of these companies offers a ""freemium"" service?",Spotify,Netflix,Tidal,A,,NO_TRY,,0.8070592880249023
-2/8/2018 20:07,5,What word does Nestlé use to describe their Toll House chocolate chips?,Morsels,Nibbles,Samples,A,,NO_TRY,,0.7134382724761963
-2/8/2018 20:07,6,"Which of these countries legally guarantees its citizens ""freedom to roam""?",Brazil,Sweden,Mongolia,B,,,RIGHT,0.6872437000274658
-2/8/2018 20:08,7,Bill Cunningham was a key influence in what style of photography?,Tilt-shift,Portrait,Street style,C,,NO_TRY,,0.7491693496704102
-2/8/2018 20:09,8,"""INTJ"" is a personality type based on a hypothesis by which psychiatrist?",B.F. Skinner,Carl Jung,Sigmund Freud,B,,,RIGHT,0.7222898006439209
-2/8/2018 20:09,9,Which of these activists is the subject of a song by John Lennon and Yoko Ono?,Angela Davis,"Martin Luther King, Jr.",Bobby Seale,A,,NO_TRY,,0.9030570983886719
-2/8/2018 20:10,10,The U.S. flag bearer for the 2018 Olympics is a medalist in what event?,Figure skating,Speed skating,Luge,C,,NO_TRY,,0.8762197494506836
-2/8/2018 20:12,11,Which of these people was born with the same name as a famous ketchup?,Henry Ford,Karl Marx,Henry Kissinger,C,,NO_TRY,,0.8649344444274902
-2/9/2018 2:06,1,What form of energy do batteries provide?,Synergy,Emotional,Electrical,C,,NO_TRY,,1.004934549331665
-2/9/2018 2:07,2,"Which ""Rose"" was the lead singer of Guns N' Roses?",Pete,Jalen,Axl,C,,,RIGHT,1.2445199489593506
-2/9/2018 2:08,3,"In a best-selling Little Golden Book, who was ""The Monster at The End of This Book""?",Sesame Street's Grover,Dracula,The reader,A,,NO_TRY,,1.4670348167419434
-2/9/2018 2:08,4,"""Embarazada"" is the Spanish word for what?",Naked,Pregnant,Embarrassed,B,,NO_TRY,,0.6675987243652344
-2/9/2018 2:09,5,Which American car manufacturer first introduced seat belts?,Jeep,Ford,Nash,C,WRONG,,,0.7619495391845703
-2/9/2018 2:10,6,Which of these authors has NOT written a comic book about Black Panther?,Roxane Gay,Ta-Nehisi Coates,Cornel West,C,,NO_TRY,,0.8931806087493896
-2/9/2018 2:12,7,"Last year, Microsoft angered customers by announcing it would eliminate what Windows software?",WordPad,Solitaire,Paint,C,,NO_TRY,,1.024613618850708
-2/9/2018 2:12,8,A 1984 Devo album has the same name as a massive 1984 single by what band?,The Human League,Pet Shop Boys,Tears for Fears,C,,NO_TRY,,0.7329225540161133
-2/9/2018 2:14,10,"In da Vinci's ""Last Supper,"" which disciple is depicted holding a weapon?",Peter,Judas,John,A,,NO_TRY,,0.8182535171508789
-2/9/2018 20:05,1,Which term is shorthand for a useful item when changing a flat tire?,Surplus,Spare,Supplement,B,,NO_TRY,,0.94677734375
-2/9/2018 20:07,3,What Olympic legend was the subject of a song in an Oscar-nominated 1999 film?,Brian Boitano,Kristi Yamaguchi,Michelle Kwan,A,,NO_TRY,,0.9724302291870117
-2/9/2018 20:09,4,Which of these items would be measured on the Scoville scale?,Habanero,Typhoon,Emerald,A,,NO_TRY,,1.79384183883667
-2/9/2018 20:10,5,Which of these iconic African-American leaders was NOT born into slavery?,W.E.B. Du Bois,Frederick Douglass,Booker T. Washington,A,,NO_TRY,,1.2715554237365723
-2/9/2018 20:10,6,A cat with what fur pattern is almost always female?,Calico,Tuxedo,Tabby,A,,,RIGHT,0.7637615203857422
-2/9/2018 20:11,7,Which nation does NOT have a two-word capital city?,Brunei,Ethiopia,Malaysia,A,,NO_TRY,,0.8073999881744385
-2/9/2018 20:13,9,The athlete who has competed in the most Olympic games hails from which country?,Canada,Finland,Japan,A,,NO_TRY,,1.167302131652832
-2/9/2018 20:13,10,Which of these fonts was NOT created by Microsoft?,Comic Sans,Verdana,Papyrus,C,,NO_TRY,,0.7432899475097656
-2/9/2018 20:14,11,"In the first known use of ""mammoth"" as an adjective, what item was it describing?",Hunk of cheese,Empire State Building,Dinosaur,A,,NO_TRY,,0.7474427223205566
-2/9/2018 20:16,12,Which of these countries has a lower gross domestic product than any U.S. state?,Ecuador,Uzbekistan,Iceland,C,,NO_TRY,,0.8935246467590332
+2/2/2018 20:04,1,What did Yankee Doodle stick in his cap?,Feather,Noodle soup,Duck,A,,NO_TRY,,2.0241544246673584
+2/2/2018 20:05,2,"What word completes the phrase: ""Everything but the kitchen""?",Sink,Kaleidoscope,Hogwash,A,,NO_TRY,,1.994121789932251
+2/2/2018 20:05,3,What was the first theatrical feature film to be completely computer-animated?,Gone with the Wind,Toy Story 2,Toy Story,C,,,RIGHT,2.8284976482391357
+2/2/2018 20:06,4,"Traditionally, an ""amuse-bouche"" arrives right before what part of the meal?",Appetizers,Entrée,Dessert,A,,,RIGHT,2.2487382888793945
+2/2/2018 20:07,5,"In the game of Candy Land, which player goes first?",The youngest,Blue token holder,First to draw a red card,A,,NO_TRY,,1.701329231262207
+2/2/2018 20:08,6,"In the popular comic strip, what color is Hagar the Horrible's beard?",White,Blond,Red,C,,,RIGHT,1.3782424926757812
+2/2/2018 20:10,7,What spice comes from the crocus flower?,Cloves,Allspice,Saffron,C,,,RIGHT,1.8879735469818115
+2/2/2018 20:11,9,Buying a can of soda will incur a higher tax in which city?,"Santa Barbara, CA","Denver, CO","Seattle, WA",C,,NO_TRY,,3.6634693145751953
+2/2/2018 20:12,10,"Who is credited with coining the phrase: ""For whom the bell tolls""?",John Donne,William Shakespeare,Ernest Hemingway,A,WRONG,,,2.1186468601226807
+2/2/2018 20:12,11,What was the first product to have its barcode scanned at purchase?,Rubik's Cube,Wrigley's chewing gum,Apple IIe,B,,NO_TRY,,1.2872605323791504
+2/2/2018 20:14,12,Catherine de' Medici was present at the performance of the first-ever formal what?,Opera,Commedia dell'arte,Ballet,C,,,RIGHT,1.2513527870178223
+2/3/2018 2:06,1,Parmesan cheese is named for an Italian province called what?,Romana,Yomamma,Parma,C,,,RIGHT,1.2230889797210693
+2/3/2018 2:07,2,Which of these famous fictional animals is a ruminant?,Bambi,Mister Ed,Eeyore,A,,NO_TRY,,2.5857341289520264
+2/3/2018 2:08,3,Which popular root beer brand typically contains caffeine?,Barq's,A&amp;W,Mug,A,,,RIGHT,2.1897995471954346
+2/3/2018 2:09,4,Which of these elements would earn you the highest score in Scrabble?,Oxygen,Xenon,Zinc,A,,NO_TRY,,1.5674169063568115
+2/3/2018 2:09,5,What is the correct spelling of the Pennsylvania town famous for its groundhog?,Punksatawany,Puncksehtany,Punxsutawney,C,,,RIGHT,2.3603317737579346
+2/3/2018 2:11,6,"In 1973, Arabella and Anita became the first members of what species to go into space?",Spider,Fruit fly,Ladybug,A,,NO_TRY,,2.0697503089904785
+2/3/2018 2:12,7,What was the least popular papal name of the 19th century?,Leo,Pius,Gregory,C,,,RIGHT,2.7451534271240234
+2/3/2018 2:12,8,New Mexico exempts which group of people from paying state income taxes?,Hybrid car owners,Centenarians,Registered lobbyists,B,,NO_TRY,,1.8793535232543945
+2/3/2018 2:14,9,Which of these Summer Olympics events uses the longest playing surface?,Fencing,Badminton,Taekwondo,A,,,RIGHT,1.4745616912841797
+2/4/2018 2:04,1,"The college degree ""B.A."" is short for what?",Bachelor of Arts,Booyah Awesome,Beefy Arms,A,,,RIGHT,1.3077261447906494
+2/4/2018 2:05,2,Which country is part of North America?,Norway,Brazil,Canada,C,,,RIGHT,1.8365981578826904
+2/4/2018 2:05,3,Which tool is typically used to clear a clogged pipe?,Claw hammer,Snake,Shovel,B,,NO_TRY,,3.4971933364868164
+2/4/2018 2:07,4,Which of the original Monopoly game pieces was retired last year?,Thimble,Race car,Top hat,A,,,RIGHT,1.5169425010681152
+2/4/2018 2:08,5,Which film director holds a U.S. patent for a T-shirt?,Quentin Tarantino,Francis Ford Coppola,James Cameron,B,,,RIGHT,1.2999393939971924
+2/4/2018 2:09,6,Which food is traditionally a main ingredient in mock turtle soup?,Calf brains,Tortoise meat,Snails,A,,NO_TRY,,1.5704355239868164
+2/4/2018 2:09,7,"Aerosmith's ""Dude (Looks Like a Lady)"" was written about what heavy metal vocalist?",Axl Rose,Bret Michaels,Vince Neil,C,,,RIGHT,1.6725234985351562
+2/4/2018 2:10,8,"Which of these is Venus visibly lacking in Botticelli's ""Birth of Venus""?",Belly button,Left arm,Body hair,C,,NO_TRY,,3.3938844203948975
+2/4/2018 2:11,9,Boston and Buffalo have both been home to major pro sports teams named what?,Giants,Angels,Braves,C,,,RIGHT,2.6948435306549072
+2/4/2018 2:12,10,Which type of animal has been kept as a White House pet by a U.S. president?,Cow,Lemur,Sugar glider,A,,,RIGHT,2.690991163253784
+2/4/2018 2:13,11,"In the 1800s, a chemistry student making synthetic quinine accidentally created what dye?",Mauve,Periwinkle,Turquoise,A,,,RIGHT,1.2902896404266357
+2/5/2018 20:05,1,Tic-tac-toe is typically played by writing what two symbols?,Yin and yang,+ / -,X / O,C,,NO_TRY,,1.9334261417388916
+2/5/2018 20:06,2,What's the anatomical name for the center of a hurricane?,Shinbone,Pancreas,Eye,C,,,RIGHT,1.9767236709594727
+2/5/2018 20:06,3,Which of these is an actual Winter Olympics event?,Skeleton,Ghostathlon,Frankensteining,A,,,RIGHT,1.8348212242126465
+2/5/2018 20:07,4,A high-tech store with no cashiers recently opened in Seattle under what name?,Amazon Go,Google Shop,Microsoft Zip,A,,,RIGHT,2.316216468811035
+2/5/2018 20:08,5,"By definition, which of these people is guilty of treason?",Scullion,Poltroon,Quisling,C,,,RIGHT,1.4286348819732666
+2/5/2018 20:09,6,Which of these actors turned down the role of Frasier Crane?,Bob Balaban,John Lithgow,Dan Aykroyd,B,,,RIGHT,2.5715463161468506
+2/5/2018 20:10,7,The Benihana company has a restaurant in which of these places?,China,Aruba,Japan,B,WRONG,,,2.6089279651641846
+2/5/2018 20:10,8,Which has been the last name of a U.S. president AND a British prime minister?,Hayes,Arthur,Wilson,C,WRONG,,,1.7461819648742676
+2/5/2018 20:12,10,In what medium was Superman's Kryptonite weakness introduced?,The radio series,The 1978 movie,Action Comics #64,A,,NO_TRY,,1.4908921718597412
+2/5/2018 20:15,12,What costume was worn by the original lead singer of the Village People?,Cowboy,Policeman,Construction worker,B,WRONG,,,1.887573480606079
+2/6/2018 2:05,1,A spork is a utensil that combines what two things?,Spam / pork,Sponge / cork,Spoon / fork,C,,NO_TRY,,2.874506950378418
+2/6/2018 2:06,2,"On a compass, what does the letter N typically stand for?",Norbit,North,Nordic,B,,,RIGHT,2.2383973598480225
+2/6/2018 2:06,3,"In 2017, what did Twitter do to its 140-character limit on tweets?",Double it,Halve it,Reduce it to 15,A,,NO_TRY,,1.821488618850708
+2/6/2018 2:08,4,"What popular corn chip loosely translates to ""little golden things"" in Spanish?",Tostitos,Fritos,Doritos,C,,NO_TRY,,1.3748998641967773
+2/6/2018 2:12,5,U.S. air traffic controllers refer to the plane the Pope travels on by what official call sign?,Shepherd One,Il Papa,Air Vatican,A,,NO_TRY,,1.5099222660064697
+2/6/2018 2:12,6,What zodiac sign features a creature that defends itself with an aculeus?,Cancer,Sagittarius,Scorpio,C,WRONG,,,3.7004380226135254
+2/6/2018 2:13,7,Who was the first U.S. president to enjoy indoor plumbing at the White House?,Millard Fillmore,Andrew Jackson,John Adams,B,WRONG,,,2.5552549362182617
+2/6/2018 2:14,8,"From 2000 to 2002, what MLB team's stadium was named for a company that no longer exists?",Angels,Rays,Astros,C,WRONG,,,1.5033080577850342
+2/6/2018 2:15,9,The lunar module for the Apollo 10 moon mission was nicknamed what?,Eagle,Beagle,Snoopy,C,,,RIGHT,1.7899231910705566
+2/6/2018 2:16,11,"After Prince Edward Island, what is Canada's most densely populated province?",New Brunswick,Ontario,Nova Scotia,C,WRONG,,,3.293194055557251
+2/6/2018 20:04,1,What is a common remedy for dehydration?,Drinking water,Running a marathon,Slaying a hydra,A,,NO_TRY,,2.891289472579956
+2/6/2018 20:07,2,"The band that recorded ""September"" is named ""Earth, Wind &amp;"" what?",Frederick,Fire,Flagellum,B,,,RIGHT,4.696264743804932
+2/7/2018 2:05,1,"In the classic fairy tale, who is Little Red Riding Hood's enemy?",Big Baller Brand,Big Lebowski,Big Bad Wolf,C,,,RIGHT,3.0648586750030518
+2/7/2018 2:05,2,Pantene Pro-V and Garnier Fructis are popular types of what?,ShamWow,Shampoo,Champagne,B,,,RIGHT,1.8586995601654053
+2/7/2018 2:06,3,A bed that folds up into the wall is commonly known as what?,Sully bed,Fitzy bed,Murphy bed,C,,,RIGHT,1.5195963382720947
+2/7/2018 2:07,4,Which of these colleges does NOT have a physical location?,Electoral College,Deep Springs College,Hampshire College,A,,NO_TRY,,1.6310129165649414
+2/7/2018 2:08,5,Which of these desserts is often made with ladyfingers?,Tiramisu,Magdalena,Financier,A,,,RIGHT,1.289318561553955
+2/7/2018 2:09,6,Which of these is a real illness that affects rabbits?,Ruffles,Fluffles,Snuffles,C,,NO_TRY,,2.0544753074645996
+2/7/2018 2:09,7,The Doors are named after a famous essay by the author of what iconic novel?,Lolita,On the Road,Brave New World,C,,NO_TRY,,1.896956443786621
+2/7/2018 2:10,8,Which TV news host once wrote about his first date with Monica Lewinsky?,Jake Tapper,Van Jones,Chris Hayes,A,,NO_TRY,,1.8153607845306396
+2/7/2018 2:11,9,"The famous German phrase ""Sturm und Drang"" comes from what?",Poem,Novel,Play,C,WRONG,,,1.8177759647369385
+2/7/2018 2:12,10,In which African country is English NOT the official language?,Sierra Leone,Liberia,Chad,C,WRONG,,,1.6172916889190674
+2/7/2018 2:13,11,Which ‘90s movie is an anagram of the original book title which the film is based on?,Free Willy,October Sky,Jumanji,B,,NO_TRY,,1.687697172164917
+2/7/2018 2:14,12,Which legendary music producer is closely related to former President Jimmy Carter?,Jeff Lynne,Brian Eno,Berry Gordy,C,,NO_TRY,,2.036546468734741
+2/7/2018 20:05,1,"Which of these websites is an online database for movies, television and video games?",Petfinder,IMDb,Yelp,B,,,RIGHT,2.1746866703033447
+2/7/2018 20:06,2,What does bicameral mean?,Two camels,Two cameras,Two chambers,C,,NO_TRY,,1.8582098484039307
+2/7/2018 20:07,3,A galleon is an old-fashioned type of what?,Ship,Measurement,Dress,A,,,RIGHT,1.5012452602386475
+2/7/2018 20:08,4,"What male singing voice type is higher than a bass, but lower than a tenor?",Baritone,Countertenor,Sopranist,A,,,RIGHT,2.2012131214141846
+2/7/2018 20:09,5,Which of these is NOT a real berry?,Buffaloberry,Iceberry,Cloudberry,B,WRONG,,,3.3705272674560547
+2/7/2018 20:10,6,George Washington Carver is famous for his scientific work on what subject?,Soil depletion,Irrigation technology,Food packaging,A,,,RIGHT,1.683415412902832
+2/7/2018 20:11,7,Which of these is NOT believed to be a function of the uvula?,Taste,Speech,Lubricant,A,WRONG,,,1.6099164485931396
+2/7/2018 20:12,8,Which of these baseball legends was a first-ballot Hall of Famer?,Joe DiMaggio,Cy Young,Mickey Mantle,C,WRONG,,,1.4694244861602783
+2/7/2018 20:15,9,Which of these things can be mathematically described as an oblate spheroid?,NFL football,Unshelled peanut,Planet Earth,C,,,RIGHT,2.3699097633361816
+2/8/2018 2:04,1,"""Fro-yo"" is short for what?",Frolicking yokels,Frozen yogurt,Frog yoga,B,,,RIGHT,3.0019216537475586
+2/8/2018 2:06,3,What is the name of a Japanese art form that features trees grown in containers?,Kawaii,Bonsai,Manga,B,,,RIGHT,2.00364089012146
+2/8/2018 2:06,4,What college football team's chant is also likely to be heard on a farm?,Arkansas Razorbacks,Ole Miss Rebels,Penn State Lions,A,,,RIGHT,1.7762322425842285
+2/8/2018 2:08,5,"What legendary ""Buffalo Bill's Wild West"" star had a negative-sounding nickname?",Annie Oakley,May Lillie,Martha Jane Cannary,C,WRONG,,,1.7451651096343994
+2/8/2018 2:09,6,Where did Bernese Mountain Dogs originate?,Myanmar,Switzerland,Afghanistan,B,,,RIGHT,3.0778329372406006
+2/8/2018 2:10,7,Which fashion designer is grandmother to a literal princess?,Diane von Fürstenberg,Rei Kawakubo,Vivienne Westwood,A,,NO_TRY,,2.106093645095825
+2/8/2018 2:11,8,Which film features the same kind of talking animal as the Old Testament book Numbers?,The Lion King,Finding Nemo,Shrek,C,,NO_TRY,,1.3287477493286133
+2/8/2018 2:13,10,In which country is GeoCities still up and running?,Canada,Japan,Australia,B,,,RIGHT,1.28371262550354
+2/8/2018 2:14,11,"Before the lyrics are sung, how many finger snaps are heard in the ""Addams Family"" theme song?",12 snaps,6 snaps,8 snaps,A,,NO_TRY,,1.5298206806182861
+2/8/2018 20:03,1,"Which of these is the name of a princess in Disney's ""Frozen""?",Frosier,Jack Frost,Elsa,C,,,RIGHT,2.8616654872894287
+2/8/2018 20:04,2,The Olympic logo features what combination of shapes?,Two triangles,Five rings,Seven parabolas,B,,NO_TRY,,2.611691951751709
+2/8/2018 20:05,3,"The Italian cooking term ""al dente"" means what?",Firm,With butter,Salted,A,,NO_TRY,,1.296665906906128
+2/8/2018 20:06,4,"Which of these companies offers a ""freemium"" service?",Spotify,Netflix,Tidal,A,,NO_TRY,,1.2426230907440186
+2/8/2018 20:07,5,What word does Nestlé use to describe their Toll House chocolate chips?,Morsels,Nibbles,Samples,A,,,RIGHT,1.6545462608337402
+2/8/2018 20:07,6,"Which of these countries legally guarantees its citizens ""freedom to roam""?",Brazil,Sweden,Mongolia,B,,,RIGHT,2.501084804534912
+2/8/2018 20:08,7,Bill Cunningham was a key influence in what style of photography?,Tilt-shift,Portrait,Street style,C,,NO_TRY,,2.718488931655884
+2/8/2018 20:09,8,"""INTJ"" is a personality type based on a hypothesis by which psychiatrist?",B.F. Skinner,Carl Jung,Sigmund Freud,B,,,RIGHT,1.4942724704742432
+2/8/2018 20:09,9,Which of these activists is the subject of a song by John Lennon and Yoko Ono?,Angela Davis,"Martin Luther King, Jr.",Bobby Seale,A,,,RIGHT,2.051649808883667
+2/8/2018 20:10,10,The U.S. flag bearer for the 2018 Olympics is a medalist in what event?,Figure skating,Speed skating,Luge,C,WRONG,,,1.6837553977966309
+2/8/2018 20:12,11,Which of these people was born with the same name as a famous ketchup?,Henry Ford,Karl Marx,Henry Kissinger,C,,NO_TRY,,2.9508252143859863
+2/9/2018 2:06,1,What form of energy do batteries provide?,Synergy,Emotional,Electrical,C,,,RIGHT,2.5431840419769287
+2/9/2018 2:07,2,"Which ""Rose"" was the lead singer of Guns N' Roses?",Pete,Jalen,Axl,C,,,RIGHT,1.5250542163848877
+2/9/2018 2:08,3,"In a best-selling Little Golden Book, who was ""The Monster at The End of This Book""?",Sesame Street's Grover,Dracula,The reader,A,,NO_TRY,,1.2975983619689941
+2/9/2018 2:08,4,"""Embarazada"" is the Spanish word for what?",Naked,Pregnant,Embarrassed,B,,NO_TRY,,1.3632135391235352
+2/9/2018 2:09,5,Which American car manufacturer first introduced seat belts?,Jeep,Ford,Nash,C,WRONG,,,3.034630060195923
+2/9/2018 2:10,6,Which of these authors has NOT written a comic book about Black Panther?,Roxane Gay,Ta-Nehisi Coates,Cornel West,C,WRONG,,,2.4499359130859375
+2/9/2018 2:12,7,"Last year, Microsoft angered customers by announcing it would eliminate what Windows software?",WordPad,Solitaire,Paint,C,WRONG,,,1.7124555110931396
+2/9/2018 2:12,8,A 1984 Devo album has the same name as a massive 1984 single by what band?,The Human League,Pet Shop Boys,Tears for Fears,C,WRONG,,,1.436138391494751
+2/9/2018 2:14,10,"In da Vinci's ""Last Supper,"" which disciple is depicted holding a weapon?",Peter,Judas,John,A,WRONG,,,1.3831958770751953
+2/9/2018 20:05,1,Which term is shorthand for a useful item when changing a flat tire?,Surplus,Spare,Supplement,B,,,RIGHT,2.591120958328247
+2/9/2018 20:07,3,What Olympic legend was the subject of a song in an Oscar-nominated 1999 film?,Brian Boitano,Kristi Yamaguchi,Michelle Kwan,A,,NO_TRY,,2.703740358352661
+2/9/2018 20:09,4,Which of these items would be measured on the Scoville scale?,Habanero,Typhoon,Emerald,A,,,RIGHT,1.4823260307312012
+2/9/2018 20:10,5,Which of these iconic African-American leaders was NOT born into slavery?,W.E.B. Du Bois,Frederick Douglass,Booker T. Washington,A,WRONG,,,1.4460608959197998
+2/9/2018 20:10,6,A cat with what fur pattern is almost always female?,Calico,Tuxedo,Tabby,A,,,RIGHT,1.376513957977295
+2/9/2018 20:11,7,Which nation does NOT have a two-word capital city?,Brunei,Ethiopia,Malaysia,A,,,RIGHT,2.9753665924072266
+2/9/2018 20:13,9,The athlete who has competed in the most Olympic games hails from which country?,Canada,Finland,Japan,A,,,RIGHT,2.5049357414245605
+2/9/2018 20:13,10,Which of these fonts was NOT created by Microsoft?,Comic Sans,Verdana,Papyrus,C,,NO_TRY,,1.5143561363220215
+2/9/2018 20:14,11,"In the first known use of ""mammoth"" as an adjective, what item was it describing?",Hunk of cheese,Empire State Building,Dinosaur,A,,NO_TRY,,1.3697524070739746
+2/9/2018 20:16,12,Which of these countries has a lower gross domestic product than any U.S. state?,Ecuador,Uzbekistan,Iceland,C,WRONG,,,1.6520898342132568
+2/10/2018 2:07,1,"Which of these Olympians is most likely to perform a lutz, axel or toe loop jump?",Michael Phelps,Usain Bolt,Kristi Yamaguchi,C,,NO_TRY,,2.9840521812438965
+2/10/2018 2:09,2,From what country did the American colonies win their independence?,Japan,Wakanda,Great Britain,C,,,RIGHT,2.747091293334961
+2/10/2018 2:09,3,Which of these animals is NOT native to Australia?,Capybara,Wallaby,Koala,A,,NO_TRY,,1.8127965927124023
+2/10/2018 2:10,4,Which congressman participated in the Selma to Montgomery marches of 1965?,Cedric Richmond,John Lewis,Jason Lewis,B,,,RIGHT,1.9673840999603271
+2/10/2018 2:11,5,The Ark of the Covenant supposedly contains what religious artifact?,The Ten Commandments,The Holy Grail,Shroud of Turin,A,,,RIGHT,3.222154378890991
+2/10/2018 2:13,6,Which of these actors is incapable of making a fist with his left hand?,Al Pacino,Morgan Freeman,Anthony Hopkins,B,,NO_TRY,,2.4175124168395996
+2/10/2018 2:13,7,Which of these is NOT a term used in Olympic curling?,Hogged stone,Burned stone,Chunked stone,C,,NO_TRY,,1.9434900283813477
+2/10/2018 2:13,8,"The ""Cha-Cha Slide"" includes a dance move named after what cartoon character?",Scooby-Doo,Daffy Duck,Charlie Brown,C,,NO_TRY,,1.3854243755340576
+2/10/2018 2:14,9,Portuguese is an official language of which country?,Equatorial Guinea,Papua New Guinea,Republic of Guinea,A,,,RIGHT,1.6014647483825684
+2/10/2018 2:15,11,Which chemical compound would you NOT use to create red and blue fireworks?,Sodium nitrate,Strontium carbonate,Copper chloride,A,,,RIGHT,2.8650481700897217
+2/10/2018 2:17,12,King Louis XIV's Palace of Versailles contained over 150 pieces of furniture made entirely of what?,Silver,Ivory,Ebony,A,,NO_TRY,,2.2743327617645264
+2/11/2018 2:07,1,Which of the following is NOT used to describe someone from that particular state?,Wisconsinian,Utahn,Connecticuter,A,,NO_TRY,,1.6661643981933594
+2/11/2018 2:09,2,Lonnie Johnson accidentally created the Supersoaker while trying to build what?,Heat pump,Nerf Blaster rival,Efficient sprinklers,A,,NO_TRY,,1.714982032775879
+2/11/2018 2:10,3,"In gardening, what word refers to overall health and usability of soil?",Loam,Tilth,Humus,B,WRONG,,,2.023655414581299
+2/11/2018 2:11,4,Which type of musical composition is also an Olympic figure skating jump?,Sarabande,Bagatelle,Mazurka,C,,NO_TRY,,3.0029876232147217
+2/11/2018 2:13,6,The westernmost region of Russia touches which of these countries?,Poland,Norway,Ukraine,A,WRONG,,,1.8328759670257568
+2/12/2018 2:05,1,Which animals race at the Kentucky Derby?,Horses,Wiener dogs,Locusts,A,,NO_TRY,,1.8336460590362549
+2/12/2018 2:06,2,What is the name for anger experienced while driving a car?,Highway displeasure,Street sadness,Road rage,C,,,RIGHT,1.6662216186523438
+2/12/2018 2:07,3,Which of these products is a depilatory?,Nair,Rogaine,Pomade,A,WRONG,,,3.1340019702911377
+2/12/2018 2:08,4,Which of these songs was NOT recorded by the Beach Boys?,Surf's Up,Surf City,Surfer Girl,B,WRONG,,,2.4790303707122803
+2/12/2018 2:08,5,Auguste Rodin's statue The Thinker is meant to represent what real-life person?,Dante Alighieri,Michelangelo,Auguste Rodin,A,WRONG,,,1.284449815750122
+2/12/2018 2:09,6,Which of these is an alveolar disorder?,Pneumonia,Strep throat,Psoriasis,A,,,RIGHT,1.5256266593933105
+2/12/2018 2:10,7,Which of these two-letter combos is an acceptable word in Scrabble?,Fi,Ro,Da,C,WRONG,,,1.4821624755859375
+2/12/2018 2:11,8,Which of these Adam Sandler movies has a female director?,Billy Madison,The Wedding Singer,Big Daddy,A,WRONG,,,3.2520980834960938
+2/12/2018 2:12,9,Which position was first held in the last year of the previous century?,Mayor of Singapore,Mayor of London,Mayor of Baghdad,B,,NO_TRY,,2.316706418991089
+2/12/2018 2:13,10,Which author's Pulitzer Prize-winning novel was adapted into a Broadway musical?,Jane Smiley,Annie Proulx,Alice Walker,C,,NO_TRY,,1.6786091327667236
+2/12/2018 2:14,11,The first edition of the CNN show Crossfire featured which host?,John Sununu,Pat Buchanan,Tucker Carlson,B,,,RIGHT,1.5191919803619385
+2/12/2018 2:15,12,"According to the Book of Leviticus, which of these animals is kosher to eat?",Owl,Cricket,Rabbit,B,WRONG,,,1.7637999057769775
+2/12/2018 2:15,13,"Bart's age on ""The Simpsons"" is NOT the same as which of these characters?",Ash from Pokémon,Encyclopedia Brown,Nancy Drew,C,,NO_TRY,,3.0178728103637695
+2/12/2018 2:18,15,The author who created Tarzan once worked for which of these publications?,Sports Illustrated,Paris Review,Sears catalog,C,WRONG,,,2.2589235305786133
+2/12/2018 20:04,1,What is the mid-day meal usually called?,Jack Bauer Power Hour,Lunch,Sleepy time,B,,,RIGHT,1.4901771545410156
+2/12/2018 20:05,2,In what part of a newspaper would you post an item for sale?,Sports section,Weather page,Classifieds,C,,NO_TRY,,2.029440402984619
+2/12/2018 20:06,3,"The ""skyhook"" is a move in which of these sports?",Polo,Acrobatics,Basketball,C,,,RIGHT,1.7793757915496826
+2/12/2018 20:07,4,What U.S. state borders only one other U.S. state?,Alaska,Maine,Rhode Island,B,WRONG,,,2.752993106842041
+2/12/2018 20:07,5,"The author of ""The Picture of Dorian Gray"" was born in what country?",France,Ireland,United States,B,WRONG,,,2.3457651138305664
+2/12/2018 20:08,6,What is the name of London's electronic public transit pass?,Opal,Oyster,Presto,B,,,RIGHT,1.4066665172576904
+2/12/2018 20:09,7,"According to Marie Kondo, you should only own material items with what quality?",Eco-friendly,Useful in daily life,Spark joy,C,,NO_TRY,,1.207414150238037
+2/12/2018 20:10,8,Which of these North American deserts is the smallest?,Sonoran Desert,Mojave Desert,Chihuahuan Desert,B,,,RIGHT,1.4004878997802734
+2/12/2018 20:11,9,"Which Secretary-General of the United Nations once appeared on ""Da Ali G Show""?",Kofi Annan,Ban Ki-moon,Boutros Boutros-Ghali,C,,,RIGHT,2.4301910400390625
+2/12/2018 20:12,10,"One thousand years ago, which of these regions was heavily populated with Moorish people?",Albion,Novgorod,Iberia,C,,,RIGHT,2.5024406909942627
+2/12/2018 20:13,11,The first official African-American fraternity was founded at what university?,Howard,Clemson,Cornell,C,WRONG,,,1.6682159900665283
+2/12/2018 20:14,12,Which of these things did Skee-Lo NOT wish for in his hit '90s song?,1964 Impala,White shirt collar,Child named Big Al,B,,NO_TRY,,1.393247365951538
+2/13/2018 2:05,1,Who famously painted the ceiling of the Sistine Chapel?,Michelangelo,Bob Ross,Mr. Brainwash,A,,,RIGHT,1.7094717025756836
+2/13/2018 2:05,2,Which U.S. coin features a portrait of Abraham Lincoln?,Kennedy half-dollar,Buffalo nickel,Penny,C,WRONG,,,2.7233481407165527
+2/13/2018 2:06,3,Which of these is NOT a unit of temperature?,Celsius,Fahrenheit,Hectare,C,WRONG,,,2.6411266326904297
+2/13/2018 2:07,4,"The R.E.M. song ""Man on the Moon"" was written about what comedian?",Jim Carrey,Mitch Hedberg,Andy Kaufman,C,,,RIGHT,1.4038147926330566
+2/13/2018 2:08,5,"What disease gets its name from the Italian term for ""bad air""?",Influenza,Malaria,Asthma,B,,,RIGHT,1.2893385887145996
+2/13/2018 2:09,6,Students of Auguste Escoffier would have known how to do what?,Design a chateau,Perform a grand jeté,Prepare a velouté,C,,NO_TRY,,1.5248517990112305
+2/13/2018 2:10,7,A 1976 book by Richard Dawkins introduced what now-common word?,Android,Emoticon,Meme,C,,,RIGHT,3.3799617290496826
+2/13/2018 2:11,8,"Which voice actor from ""The Emperor's New Groove"" was once blacklisted in Hollywood?",Eartha Kitt,Wendie Malick,Tom Jones,A,,,RIGHT,2.4326157569885254
+2/13/2018 2:12,9,Which of these is NOT a menu option for ordering hash browns at Waffle House?,Capped,Slathered,Chunked,B,,NO_TRY,,1.6033430099487305
+2/13/2018 2:12,10,"What math concept is traditionally notated by a tall, S-shaped curve?",Second derivative,Series,Integral,C,,NO_TRY,,1.6346385478973389
+2/13/2018 2:14,11,Which of these supposedly hip cities does NOT have an Instagram filter named after it?,Nashville,Austin,Brooklyn,B,,,RIGHT,1.3601305484771729
+2/13/2018 2:15,12,The inventor of the board game Risk also directed what award-winning film?,The 400 Blows,The Red Balloon,Last Year at Marienbad,B,,NO_TRY,,2.360144853591919
+2/13/2018 20:04,1,"According to legend, what vessel is most likely to contain a wish-granting genie?",Magic limo,Magic lamp,Magic loofah,B,,NO_TRY,,2.6055164337158203
+2/13/2018 20:05,2,"Which of these destinations is legally allowed to bill itself as ""The Happiest Place on Earth""?",Maryland,Orlando,Disneyland,C,,NO_TRY,,1.416822910308838
+2/13/2018 20:05,3,"At New Orleans Mardi Gras, what are float riders required to wear by law?",Tuxedos,Masks,Sweater vests,B,,NO_TRY,,1.3805599212646484
+2/13/2018 20:06,4,Which of these is NOT part of the three-word Olympic motto?,Thicker,Higher,Faster,A,WRONG,,,1.3952219486236572
+2/13/2018 20:07,5,Cirque du Soleil is a theater troupe first formed in which country?,USA,Canada,France,B,,,RIGHT,2.5844104290008545
+2/13/2018 20:08,6,Which of these films does NOT prominently feature identical twins?,Adaptation,The Parent Trap,Twins,C,,,RIGHT,2.8291423320770264
+2/13/2018 20:09,7,"The painting ""Washington Crosses the Delaware"" has appeared on which state quarter?",New Jersey,Delaware,Washington,A,WRONG,,,1.329850196838379
+2/13/2018 20:10,8,The 2008 Olympics were the first time the medals contained what material?,Jade,Amber,Coral,A,,NO_TRY,,1.849029302597046
+2/13/2018 20:10,9,"When written in all caps, which insult refers to a common type of computer user interface?",Clod,Wimp,Dolt,B,,NO_TRY,,1.750518560409546
+2/13/2018 20:12,11,"The ""Father of Art Deco"" designed over 200 covers for which magazine?",New Yorker,Harper's Bazaar,Vogue,B,,NO_TRY,,4.064023017883301
+2/14/2018 2:04,1,"Who is Robert Downey, Jr.'s father?","Robert Downey, Sr.",Chet Downey III,"Morton Downey, Jr.",A,,NO_TRY,,1.58905029296875
+2/14/2018 2:05,2,"In July of 2017, Joey Chestnut set a world record by consuming 72 what?",Pickles,Hot dogs,Raw oysters,B,,NO_TRY,,1.8432302474975586
+2/14/2018 2:07,3,Who just became the youngest woman to win gold in Olympics snowboarding?,Khloé Kardashian,Chloë Grace Moretz,Chloe Kim,C,,,RIGHT,1.6018640995025635
+2/14/2018 2:08,4,"In Ancient Greece, Olympic athletes typically competed wearing what?",Togas,Laurel wreaths,Nothing at all,C,,NO_TRY,,4.378880023956299
+2/14/2018 2:08,5,"What pop star first recorded under the same name as the so-called ""sailor's devil""?",Elton John,David Bowie,Freddie Mercury,B,,NO_TRY,,1.8921141624450684
+2/14/2018 2:09,6,"In the King James Bible, which of these measures ""six cubits and a span""?",Stone tablet,Noah's Ark,Goliath,C,,,RIGHT,1.4868988990783691
+2/14/2018 2:10,7,Which of these is NOT a palindrome?,A Toyota's a Toyota,Was it a rat I saw?,"Walk sir, I'll risk law",C,,NO_TRY,,1.4627370834350586
+2/14/2018 2:11,8,Aaron Sorkin &amp; Quentin Tarantino helped write the screenplay to which movie?,The Rock,Con Air,Face/Off,A,,,RIGHT,1.3503663539886475
+2/14/2018 2:12,9,"In 1997, Alabama's state bar association put up a monument to whom?",Atticus Finch,John Grisham,William Jennings Bryan,A,,NO_TRY,,3.764805555343628
+2/14/2018 2:13,10,"What Canadian city aptly takes its name from a Cree term for ""muddy water""?",Winnipeg,Ottawa,Toronto,A,,,RIGHT,2.2572832107543945
+2/14/2018 2:14,11,Which of these performers was part of the first Lollapalooza festival lineup?,Soundgarden,Depeche Mode,Ice-T,C,WRONG,,,1.663771390914917
+2/14/2018 20:04,1,Hamburgers are usually made with what?,Yarn,Ground beef,Sweet dreams,B,,,RIGHT,1.3173978328704834
+2/14/2018 20:05,2,Who is the reigning monarch of Great Britain?,Queen Elizabeth,Prince Paul,King Koopa,A,,,RIGHT,2.3529858589172363
+2/14/2018 20:07,3,Which of these is a tool used for glass blowing?,Swage,Rotary cutter,Punty,C,,NO_TRY,,2.795083999633789
+2/14/2018 20:08,4,Which of these animals has a species named after Ferdinand Magellan?,Penguin,Otter,Dolphin,A,,NO_TRY,,1.4156079292297363
+2/14/2018 20:09,6,Ancient Egyptians shaved their eyebrows when what occurred?,Pharaoh became ill,House cat passed away,Harvest was bountiful,B,,NO_TRY,,1.3964557647705078
+2/14/2018 20:10,7,Which legendary writer used to live with Marlon Brando?,Jack Kerouac,Allen Ginsberg,James Baldwin,C,,NO_TRY,,0.7487258911132812
+2/14/2018 20:11,8,Which of these animals does NOT possess chromatophores?,Cuttlefish,Zebrafish,Peacock,C,,NO_TRY,,0.7739925384521484
+2/15/2018 2:06,1,Which of these U.S. TV shows airs earliest in the day?,Mad Money,Good Morning America,World News Tonight,B,,NO_TRY,,0.8690972328186035
+2/15/2018 2:06,2,Neil Armstrong was the first person to do what?,Run a 4-minute mile,Walk on the moon,Dunk a basketball,B,,NO_TRY,,0.5516345500946045
+2/15/2018 2:07,3,"Traditionally made with cheese, what Swiss dish means ""melted"" in French?",Meringue,Fondue,Quiche,B,,NO_TRY,,1.4058680534362793
+2/15/2018 2:08,4,"Which novel is set in a land named after the Latin word for ""bread""?",The Silver Chair,The Hunger Games,Fahrenheit 451,B,,NO_TRY,,1.183589220046997
+2/15/2018 2:08,5,During which holiday are the most greeting cards in the U.S. sold?,Christmas,Valentine's Day,Mother's Day,A,,NO_TRY,,1.2614870071411133
+2/15/2018 2:10,6,"In ""Pulp Fiction,"" Samuel L. Jackson claims his iconic monologue comes from what book of the Bible?",Ezekiel,Leviticus,Exodus,A,,,RIGHT,1.7366304397583008
+2/15/2018 2:12,9,Which inventor boarded a steamer ship in 1913 and was never seen alive again?,Nikola Tesla,Rudolf Diesel,George Eastman,B,,NO_TRY,,2.072659730911255

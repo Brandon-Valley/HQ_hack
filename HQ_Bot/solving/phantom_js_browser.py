@@ -6,7 +6,7 @@ PATH = 'C:/Users/Brandon/Downloads/phantomjs-2.1.1-windows/phantomjs-2.1.1-windo
 
 class Browser:
 
-    def __init__(self, path = PATH, initiate=True, implicit_wait_time = 10, explicit_wait_time = 2):
+    def __init__(self, path = PATH, initiate=True, implicit_wait_time = 0, explicit_wait_time = 0):#implicit_wait_time = 10, explicit_wait_time = 2):
         self.path = PATH
         self.implicit_wait_time = implicit_wait_time    # http://www.aptuz.com/blog/selenium-implicit-vs-explicit-waits/
         self.explicit_wait_time = explicit_wait_time    # http://www.aptuz.com/blog/selenium-implicit-vs-explicit-waits/
@@ -63,14 +63,14 @@ def main():
     i = 0
     start = time.time()
     
-    for x in range(120):
-        url = br.get_search_url('origen of the number ' + str(x))
-        print (url)
-    #     results = br.search('origen of the number ' + str(x))
-    #     for r in results:
-    #         print(r)
-        print('%s    %s' %(i, time.time() - start))
-        i += 1
+#     for x in range(120):
+#     url = br.get_search_url('origen of the number ' + str(x))
+#     print (url)
+    results = br.search('What was the first theatrical feature film to be completely computer-animated? ' )
+    for r in results:
+        print(r)
+    print('%s    %s' %(i, time.time() - start))
+    i += 1
             
     end = time.time()
     print('total_time: ', end - start)

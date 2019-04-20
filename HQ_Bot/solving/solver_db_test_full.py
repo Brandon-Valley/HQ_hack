@@ -61,6 +61,7 @@ print('num lines to solve: ', len(db_dl) - 2)
 correct_answer_total = 0
 wrong_answer_total   = 0
 no_try_total         = 0
+solver_times         = []
 
 line_cnt = 0
 for line_d in db_dl:
@@ -70,23 +71,14 @@ for line_d in db_dl:
                      line_d['C']]
     correct_answer = line_d['correct']
 
-#     if line_cnt % 10  == 0 and line_cnt != 0:
-#         print('sleeping...')
-#         time.sleep(10)
 
-#     solved = False
-#     while(solved == False):
-#         try:
     solver_start_time = time.time()
-    solved_output_d = solver_select.solve(question, options, keywords_d, br)
-    solver_end_time = time.time()
-    solved = True
-        
-#         except:
-#             print ('http error, waiting...')
-#             time.sleep(10)
     
+    solved_output_d = solver_select.solve(question, options, keywords_d, br)
+    
+    solver_end_time = time.time()    
     solver_time = solver_end_time - solver_start_time
+    solver_times.append(solver_time)
     
     
     tryed_to_solve = '' # empty box if it did try to solve
@@ -112,7 +104,7 @@ for line_d in db_dl:
     
     logger.logSingle(line_d, SOLVED_DB_CSV_PATH, wantBackup = False, headerList = SOLVED_DB_HEADER_LIST, overwriteAction = 'append')
     
-    print('solved line:  %s,   time = %s' %(line_cnt + 2, time))#`````````````````````````````````````````````````````````````````````````
+    print('solved line:  %s,   time = %s' %(line_cnt + 2, solver_time))#`````````````````````````````````````````````````````````````````````````
     line_cnt += 1
     
     
@@ -132,6 +124,8 @@ print('no_try:  ', result_percent_l[2] * 100)
 
 end_time = time.time()
 print('total_time: ', end_time - start_time)
+
+print('avg solver time: ', sum(solver_times) / len(solver_times))
 
 br.end()
 print('done!')
