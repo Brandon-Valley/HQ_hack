@@ -55,7 +55,7 @@ def get_keywords_d_from_csv(csv_path):
 
 
 
-import answer_bot
-if __name__ == "__main__":
-    answer_bot.main()
+# import answer_bot
+# if __name__ == "__main__":
+#     answer_bot.main()
 
