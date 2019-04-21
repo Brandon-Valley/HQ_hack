@@ -8,7 +8,6 @@ PATH = 'C:/Users/Brandon/Downloads/phantomjs-2.1.1-windows/phantomjs-2.1.1-windo
 class Browser:
 
     def __init__(self, path = PATH, initiate=True, implicit_wait_time = 0, explicit_wait_time = 0):#implicit_wait_time = 10, explicit_wait_time = 2):
-        print('starting phantom js browser...')
         self.sem = threading.Semaphore()
         
         
@@ -22,10 +21,8 @@ class Browser:
         return
 
     def start(self):
-        print('in start')
         self.driver = webdriver.PhantomJS(PATH)
 #         self.driver.implicitly_wait(self.implicit_wait_time)
-        print('about done starting browser???')
         return
 
     def end(self):
@@ -78,6 +75,7 @@ class Browser:
 def get_search_result(query, result_l_index, results_l, br):
     
     results = br.search(query, result_l_index )
+    print('             VVVVVVVVVVVV        results: ', results)
     results_l[result_l_index] = results
     print('         just finished thread: ', result_l_index)
     return
@@ -105,6 +103,13 @@ def get_search_result(query, result_l_index, results_l, br):
 #     thread_list.append(t)
 #     t.start()
 
+def make_and_add_browser(browser_l, x):
+    print('in make_and_add_browser')
+    br = Browser()
+    browser_l.append(br)
+
+
+
 
 from threading import Thread
 
@@ -113,7 +118,33 @@ NUM_THREADS_ = 10
 def main():
 
     path = 'C:/Users/Brandon/Downloads/phantomjs-2.1.1-windows/phantomjs-2.1.1-windows/bin/phantomjs.exe' ## SET YOU PATH TO phantomjs
+    
+    b_st = time.time()
+    
+    NUM_BROWSERS = 2
+    browser_list = []
+    b_thread_list = []
+    DUMMY_INT = 4 #this does not do anything but for some reason I cant make browsers in threads without adding this
+    
+    for x in range(NUM_BROWSERS):
+        b_thread_list.append(Thread(target=make_and_add_browser, args=(browser_list, DUMMY_INT) ))
+        
+    for thread in b_thread_list:
+        thread.start()
+     
+    for thread in b_thread_list:
+        thread.join()
+    
+    b_et = time.time()
+    print('time to make browsers: ', b_et - b_st)
+    
+#     st = time.time()
     br = Browser()
+#     et = time.time()
+#     print(et - st)
+#     br2 = Browser()
+#     print(time.time() - et)
+    
     print('here')
     i = 0
     start = time.time()
@@ -147,6 +178,7 @@ def main():
     
     for x in range(NUM_THREADS_):
         results_l.append(None)
+        browser_num = x % len(browser_list)
         thread_list.append(Thread(target=get_search_result, args=('origin of the number ' + str(x), x, results_l, br)))
     
     for thread in thread_list:
