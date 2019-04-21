@@ -102,10 +102,6 @@ db_dl = logger.readCSV(DB_CSV_PATH)
 # print(db_dl)
 print('num lines to solve: ', len(db_dl) - 2)
 
-# correct_answer_total = 0
-# wrong_answer_total   = 0
-# no_try_total         = 0
-# solver_times         = []
 
 try:
     
@@ -118,33 +114,25 @@ try:
         correct_answer = line_d['correct']
     
     
-    #     if line_cnt != 0 and line_cnt % 180 == 0:
-    #         print ('sleeping...')
-    #         time.sleep(30)
-    
         solver_start_time = time.time()
         
         solved_output_d = solver_select.solve(question, options, keywords_d, br)
         
         solver_end_time = time.time()    
         solver_time = solver_end_time - solver_start_time
-    #     solver_times.append(solver_time)
         
         
         tryed_to_solve = '' # empty box if it did try to solve
         if solved_output_d['answer'] == None:
             tryed_to_solve = 'NO_TRY'
-    #         no_try_total += 1
             
         wrong = ''
         right = ''
         if solved_output_d['answer'] != None:
             if solved_output_d['answer'] == correct_answer:
                 right = 'RIGHT'
-    #             correct_answer_total += 1
             else:
                 wrong = 'WRONG'
-    #             wrong_answer_total += 1
             
     
         line_d['right'] = right
@@ -154,6 +142,7 @@ try:
         
         logger.logSingle(line_d, SOLVED_DB_CSV_PATH, wantBackup = False, headerList = SOLVED_DB_HEADER_LIST, overwriteAction = 'append')
         
+        print('')
         print('solved line:  %s,   time = %s' %(line_cnt + 2, solver_time))#`````````````````````````````````````````````````````````````````````````
         line_cnt += 1
 except:
@@ -161,17 +150,9 @@ except:
     
     
 
-
-
-# result_percent_l = solver_utils.num_occurrence_percent_l([correct_answer_total, wrong_answer_total, no_try_total])
-# print('correct: ', result_percent_l[0] * 100)
-# print('wrong:   ', result_percent_l[1] * 100)
-# print('no_try:  ', result_percent_l[2] * 100)
-
 end_time = time.time()
-print('total_time: ', end_time - start_time)
+print('total_time: solved %s lines in %s sec' %(line_cnt, end_time - start_time))
 
-# print('avg solver time: ', sum(solver_times) / len(solver_times))
 
 br.end()
 
@@ -181,24 +162,6 @@ print_solved_csv_stats(SOLVED_DB_CSV_PATH)
 
 
 print('done!')
-
-
-# solver_output_l = solver_select.get_solver_output_l(question, options, keywords_d)
-
-
-#show output of test
-# print('question:  ', question)
-# print('')
-# print('option_1:  ', options[0])
-# print('option_2:  ', options[1])
-# print('option_3:  ', options[2])
-# print('')
-# 
-# 
-# for solver_output in solver_output_l: #````````````````````````````````````````````````````````````````````
-#     solver_output.print_me()
-
-
 
 
 
