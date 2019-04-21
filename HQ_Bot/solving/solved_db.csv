@@ -1,13 +1,4 @@
 timestamp,question #,question,A,B,C,correct,wrong,tryed_to_solve,right,time
-2/2/2018 20:04,1,What did Yankee Doodle stick in his cap?,Feather,Noodle soup,Duck,A,,NO_TRY,,2.243802547454834
-2/2/2018 20:05,2,"What word completes the phrase: ""Everything but the kitchen""?",Sink,Kaleidoscope,Hogwash,A,,NO_TRY,,2.5794084072113037
-2/2/2018 20:05,3,What was the first theatrical feature film to be completely computer-animated?,Gone with the Wind,Toy Story 2,Toy Story,C,,,RIGHT,3.460960865020752
-2/2/2018 20:06,4,"Traditionally, an ""amuse-bouche"" arrives right before what part of the meal?",Appetizers,Entre,Dessert,A,,,RIGHT,1.1858837604522705
-2/2/2018 20:07,5,"In the game of Candy Land, which player goes first?",The youngest,Blue token holder,First to draw a red card,A,,NO_TRY,,1.5439071655273438
-2/2/2018 20:08,6,"In the popular comic strip, what color is Hagar the Horrible's beard?",White,Blond,Red,C,,,RIGHT,1.318453073501587
-2/2/2018 20:10,7,What spice comes from the crocus flower?,Cloves,Allspice,Saffron,C,,,RIGHT,1.7796580791473389
-2/2/2018 20:11,9,Buying a can of soda will incur a higher tax in which city?,"Santa Barbara, CA","Denver, CO","Seattle, WA",C,,NO_TRY,,3.2990050315856934
-2/2/2018 20:12,10,"Who is credited with coining the phrase: ""For whom the bell tolls""?",John Donne,William Shakespeare,Ernest Hemingway,A,WRONG,,,2.4686999320983887
-2/2/2018 20:12,11,What was the first product to have its barcode scanned at purchase?,Rubik's Cube,Wrigley's chewing gum,Apple IIe,B,,NO_TRY,,1.5741584300994873
-2/2/2018 20:14,12,Catherine de' Medici was present at the performance of the first-ever formal what?,Opera,Commedia dell'arte,Ballet,C,,,RIGHT,1.3238883018493652
-2/3/2018 2:06,1,Parmesan cheese is named for an Italian province called what?,Romana,Yomamma,Parma,C,,,RIGHT,1.2692267894744873
+2/2/2018 20:04,1,What did Yankee Doodle stick in his cap?,Feather,Noodle soup,Duck,A,,NO_TRY,,1.7713711261749268
+2/2/2018 20:05,2,"What word completes the phrase: ""Everything but the kitchen""?",Sink,Kaleidoscope,Hogwash,A,,NO_TRY,,1.3045470714569092
+2/2/2018 20:05,3,What was the first theatrical feature film to be completely computer-animated?,Gone with the Wind,Toy Story 2,Toy Story,C,,,RIGHT,1.148965835571289
