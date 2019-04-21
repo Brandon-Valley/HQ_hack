@@ -17,11 +17,11 @@ def get_first_wiki_article_url(query, br):
     while True:
     
         result = br.search(query + 'wiki')
-        print('in solver utils', result)#1`````````````````````````````````````````````````````````````````````````````````````
+#         print('in solver utils', result)#1`````````````````````````````````````````````````````````````````````````````````````
         
         if result == []:
             print('sleeping...')
-            time.sleep(30)
+            time.sleep(5)
         else:
             return result[0]['url']
 

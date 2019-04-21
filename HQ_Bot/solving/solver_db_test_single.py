@@ -36,12 +36,13 @@ import phantom_js_browser
 DB_CSV_PATH = "C:\\Users\\Brandon\\Documents\\Personal_Projects\\HQ_hack\\HQ_qo_database.csv"
 KEYWORDS_CSV_PATH = "C:\\Users\\Brandon\\Documents\\Personal_Projects\\HQ_hack\\HQ_Bot\\keywords.csv"
 
-DB_LINE_NUM =193
+DB_LINE_NUM =1039
+
 
 br = phantom_js_browser.Browser()
 
 db_dl = logger.readCSV(DB_CSV_PATH)
-print(db_dl)
+# print(db_dl)
 
 question = db_dl[DB_LINE_NUM - 2]['question']
 options = [db_dl[DB_LINE_NUM - 2]['A'],

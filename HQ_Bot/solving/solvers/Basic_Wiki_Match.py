@@ -21,6 +21,8 @@ class Basic_Wiki_Match(Solver.Solver):
     
     # decide if this solver is appropriate based on the question and options
     def appropriate(self, qo_properties):
+        if qo_properties['contains_neg_keyword'] == True:
+            return False
 #         print('need to implement appropriate function!')
         return True;
         
@@ -41,7 +43,7 @@ class Basic_Wiki_Match(Solver.Solver):
         elif (num_occ_l.count(0) == 1):
             self.solver_output.confidence = 50
         # all of them showed up in article, cut confidence again
-        elif (num_occ_l.count(0) == 1):
+        elif (num_occ_l.count(0) == 0):
             self.solver_output.confidence = 25
         # none showed up
         elif (num_occ_l.count(0) == 3):

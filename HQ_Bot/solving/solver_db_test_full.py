@@ -27,6 +27,13 @@ import os
 #    - would only apply to 0.011% 
 
 
+# - make score of accociation between whole question and wiki article, compare to wiki of all options
+#     - maybe make the uncommoness of words found in wikis effect score ie: steam boat gives more points than ocean
+#          -maybe also use thesurus in search, maybe use antonyms when there are neg words in question
+
+
+#  - user google natural language to go after multi step, it can recognize when there is a description of a person, so you can
+#    find that person, then use his name to do more saerches
 
 # interesting questions:
 # 10 - the quote is by john but is also the name of a book by hemmingway, maybe quara search?

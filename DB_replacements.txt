@@ -1,1 +1,3 @@
 amp; - delete, this shows up after the & sign
+ée  -  �
+‘  - delete, shows up befor 90s
