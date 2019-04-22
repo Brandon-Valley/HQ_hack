@@ -13,6 +13,7 @@ import time
         
         
 def get_first_wiki_article_url(query, br):
+    
 #     got_result = False
     while True:
     

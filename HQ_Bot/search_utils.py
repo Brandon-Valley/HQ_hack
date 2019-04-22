@@ -134,6 +134,13 @@ if __name__ == '__main__':
         
     start = time.time()#```````````````````````````````````````````````````````````````
     
+    
+    import wikipedia
+    p = wikipedia.page("Python programming language")
+    print(p.url)
+    print(p.title)
+    content = p.content # Content of page.
+    
     # q_wiki_url = get_first_wiki_article_url('how long do cats get')#```````````````````````````````````````````````````````````
     
     # Thread(target = func1).start()
@@ -166,29 +173,29 @@ if __name__ == '__main__':
     # t6.join()
     # # t2.join()    
         
-        
-    num_threads = 5    
-    thread_list = []
-    
-    for thread_num in range(num_threads):
-        question = 'history of the number ' + str(thread_num)
-        new_thread = Thread(target=func1, args=([question]))
-        thread_list.append(new_thread)
-        
-    for thread in thread_list:
-        thread.start()
-    
-    
-    for thread in thread_list:
-        thread.join()
-        
-        
-        
-    
-    end = time.time()
-    print('get_first_wiki_article_url(question): ', end - start)#`````````````````````````````````````````````````
-    print(A)
-        
+#         
+#     num_threads = 5    
+#     thread_list = []
+#     
+#     for thread_num in range(num_threads):
+#         question = 'history of the number ' + str(thread_num)
+#         new_thread = Thread(target=func1, args=([question]))
+#         thread_list.append(new_thread)
+#         
+#     for thread in thread_list:
+#         thread.start()
+#     
+#     
+#     for thread in thread_list:
+#         thread.join()
+#         
+#         
+#         
+#     
+#     end = time.time()
+#     print('get_first_wiki_article_url(question): ', end - start)#`````````````````````````````````````````````````
+#     print(A)
+#         
         
         
         

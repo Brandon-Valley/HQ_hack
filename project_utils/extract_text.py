@@ -47,6 +47,24 @@ QO_IMG_PATH_LIST = [QUESTION_IMG_PATH,
 BACKGROUND_IMG_DIMS = (500, 1200)
 BACKGROUND_IMG_COLOR = (5, 5, 5, 5)#(000, 153, 000, 5)
 
+ADB_SCREENSHOT_FILENAME = 'screencap.png'
+
+
+
+
+def crop_question_and_options_from_adb_screenshot(adb_screenshot_filename):
+    
+    img = Image.open(adb_screenshot_filename)
+#     area = (400, 400, 800, 800)
+    cropped_img = img.crop(QUESTION_SC_COORDS)
+    cropped_img.show()
+
+def adb_screenshot(screenshot_filename):
+    os.system("adb shell screencap -p /sdcard/" + screenshot_filename)
+    os.system("adb pull /sdcard/" + screenshot_filename)
+#     image = cv2.imread(screenshot_filename)
+#     image.show()
+
 
 def grab_screen(screenshot_cords, save_path):
     im = Imagegrab.grab(bbox=screenshot_cords) #im = Imagegrab.grab(bbox=(31,228,485,640))
@@ -173,6 +191,9 @@ def test_alignment():
 
 if __name__ == '__main__':
     print ('running...')
+    adb_screenshot(ADB_SCREENSHOT_FILENAME)
+    crop_question_and_options_from_adb_screenshot(ADB_SCREENSHOT_FILENAME)
+    
     st = time.time()
         
     qo_d = read_questions_and_options_from_screen()

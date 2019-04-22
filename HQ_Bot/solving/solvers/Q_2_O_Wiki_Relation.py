@@ -15,15 +15,15 @@ import solver_utils
 # pulls first page in google for the full question + 'wiki', then finds # of occurances of all options,
 # only gives confident answer if only one of the options occurs
 
-class Basic_Wiki_Match(Solver.Solver):
+class Q_2_O_Wiki_Relation(Solver.Solver):
     def __init__(self):
-        self.solver_output = Solver.Solver_Output('Basic_Wiki_Match') 
+        self.solver_output = Solver.Solver_Output('Q_2_O_Wiki_Relation') 
     
     # decide if this solver is appropriate based on the question and options
     def appropriate(self, qo_properties):
-        if qo_properties['contains_neg_keyword'] == True:
-            return False
-#         print('need to implement appropriate function!')
+#         if qo_properties['contains_neg_keyword'] == True:
+#             return False
+# #         print('need to implement appropriate function!')
         return True;
         
         
