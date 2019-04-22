@@ -29,7 +29,7 @@ import time #just for testing
 #                     x1  y1  x2  y2
 yo = 80
 # xo = 30
-QUESTION_SC_COORDS = (40,240,420,460)
+QUESTION_SC_COORDS = (40,240,420,460)#(80,550,900,800)
 OPTION_1_SC_COORDS = (70,470,380,530)
 OPTION_2_SC_COORDS = (70,470+yo,380,530+yo)
 OPTION_3_SC_COORDS = (70,470+(yo*2),380,530+(yo*2))
@@ -48,18 +48,6 @@ BACKGROUND_IMG_DIMS = (500, 1200)
 BACKGROUND_IMG_COLOR = (5, 5, 5, 5)#(000, 153, 000, 5)
 
 ADB_SCREENSHOT_FILENAME = 'screencap.png'
-
-
-
-
-# def crop_question_and_options_from_adb_screenshot(adb_screenshot_filename):
-#     
-#     img = Image.open(adb_screenshot_filename)
-#     cropped_img = img.crop((80,550,900,800))
-#     cropped_img.show()
-
-
-
 
     
     
@@ -103,26 +91,26 @@ def run_extract_text_and_add_to_qo_dict_threads(qo_dict, img_path_list = QO_IMG_
         thread.join()
     
     
-    
-def run_extract_text_threads(original_img, qo_dict, img_path_list = QO_IMG_PATH_LIST):
-    crop_img_and_extract_text(original_img, QUESTION_SC_COORDS, img_path_list[0], 'question' , qo_dict)
-    crop_img_and_extract_text(original_img, OPTION_1_SC_COORDS, img_path_list[1], 'option_1' , qo_dict)
-    crop_img_and_extract_text(original_img, OPTION_2_SC_COORDS, img_path_list[2], 'option_2' , qo_dict)
-    crop_img_and_extract_text(original_img, OPTION_3_SC_COORDS, img_path_list[3], 'option_3' , qo_dict)
-
-
-def crop_img_and_extract_text(original_img, crop_coords, cropped_img_path, qo_dict_key, qo_dict):
-    crop_img(original_img, cropped_img_path, crop_coords)
-    qo_dict[qo_dict_key] = extract_text_from_image(cropped_img_path)
-    
-    
-
-def run_crop_img_and_extract_text_threads(original_img, qo_dict, img_path_list = QO_IMG_PATH_LIST):
-    crop_img_and_extract_text(original_img, QUESTION_SC_COORDS, img_path_list[0], 'question' , qo_dict)
-    crop_img_and_extract_text(original_img, OPTION_1_SC_COORDS, img_path_list[1], 'option_1' , qo_dict)
-    crop_img_and_extract_text(original_img, OPTION_2_SC_COORDS, img_path_list[2], 'option_2' , qo_dict)
-    crop_img_and_extract_text(original_img, OPTION_3_SC_COORDS, img_path_list[3], 'option_3' , qo_dict)
-    
+#     
+# def run_extract_text_threads(original_img, qo_dict, img_path_list = QO_IMG_PATH_LIST):
+#     crop_img_and_extract_text(original_img, QUESTION_SC_COORDS, img_path_list[0], 'question' , qo_dict)
+#     crop_img_and_extract_text(original_img, OPTION_1_SC_COORDS, img_path_list[1], 'option_1' , qo_dict)
+#     crop_img_and_extract_text(original_img, OPTION_2_SC_COORDS, img_path_list[2], 'option_2' , qo_dict)
+#     crop_img_and_extract_text(original_img, OPTION_3_SC_COORDS, img_path_list[3], 'option_3' , qo_dict)
+# 
+# 
+# def crop_img_and_extract_text(original_img, crop_coords, cropped_img_path, qo_dict_key, qo_dict):
+#     crop_img(original_img, cropped_img_path, crop_coords)
+#     qo_dict[qo_dict_key] = extract_text_from_image(cropped_img_path)
+#     
+#     
+# 
+# def run_crop_img_and_extract_text_threads(original_img, qo_dict, img_path_list = QO_IMG_PATH_LIST):
+#     crop_img_and_extract_text(original_img, QUESTION_SC_COORDS, img_path_list[0], 'question' , qo_dict)
+#     crop_img_and_extract_text(original_img, OPTION_1_SC_COORDS, img_path_list[1], 'option_1' , qo_dict)
+#     crop_img_and_extract_text(original_img, OPTION_2_SC_COORDS, img_path_list[2], 'option_2' , qo_dict)
+#     crop_img_and_extract_text(original_img, OPTION_3_SC_COORDS, img_path_list[3], 'option_3' , qo_dict)
+#     
     
 #     
 #     thread_list = []
@@ -141,9 +129,9 @@ def run_crop_img_and_extract_text_threads(original_img, qo_dict, img_path_list =
 
 
 
-def grab_screen(screenshot_cords, save_path):
-    im = Imagegrab.grab(bbox=screenshot_cords) #im = Imagegrab.grab(bbox=(31,228,485,640))
-    im.save(save_path)
+# def grab_screen(screenshot_cords, save_path):
+#     im = Imagegrab.grab(bbox=screenshot_cords) #im = Imagegrab.grab(bbox=(31,228,485,640))
+#     im.save(save_path)
 #
 
 def extract_text_from_image(img_path, lang = 'eng'):    
@@ -160,27 +148,27 @@ def extract_text_from_image(img_path, lang = 'eng'):
     
     return text
 
-
-#probably faster to give this func its own thread
-def grab_screen_and_extract_text(screenshot_coords, img_path, qo_dict_key, qo_dict):
-    grab_screen(screenshot_coords, img_path)
-    qo_dict[qo_dict_key] = extract_text_from_image(img_path) 
-    
-
-
-def run_grab_screen_and_extract_text_threads(qo_dict, img_path_list = QO_IMG_PATH_LIST):
-    thread_list = []
-       
-    thread_list.append(Thread(target=grab_screen_and_extract_text, args=(QUESTION_SC_COORDS, img_path_list[0], 'question' , qo_dict)))
-    thread_list.append(Thread(target=grab_screen_and_extract_text, args=(OPTION_1_SC_COORDS, img_path_list[1], 'option_1' , qo_dict)))
-    thread_list.append(Thread(target=grab_screen_and_extract_text, args=(OPTION_2_SC_COORDS, img_path_list[2], 'option_2' , qo_dict)))
-    thread_list.append(Thread(target=grab_screen_and_extract_text, args=(OPTION_3_SC_COORDS, img_path_list[3], 'option_3' , qo_dict)))  
-        
-    for thread in thread_list:
-        thread.start()
-       
-    for thread in thread_list:
-        thread.join()
+# 
+# #probably faster to give this func its own thread
+# def grab_screen_and_extract_text(screenshot_coords, img_path, qo_dict_key, qo_dict):
+#     grab_screen(screenshot_coords, img_path)
+#     qo_dict[qo_dict_key] = extract_text_from_image(img_path) 
+#     
+# 
+# 
+# def run_grab_screen_and_extract_text_threads(qo_dict, img_path_list = QO_IMG_PATH_LIST):
+#     thread_list = []
+#        
+#     thread_list.append(Thread(target=grab_screen_and_extract_text, args=(QUESTION_SC_COORDS, img_path_list[0], 'question' , qo_dict)))
+#     thread_list.append(Thread(target=grab_screen_and_extract_text, args=(OPTION_1_SC_COORDS, img_path_list[1], 'option_1' , qo_dict)))
+#     thread_list.append(Thread(target=grab_screen_and_extract_text, args=(OPTION_2_SC_COORDS, img_path_list[2], 'option_2' , qo_dict)))
+#     thread_list.append(Thread(target=grab_screen_and_extract_text, args=(OPTION_3_SC_COORDS, img_path_list[3], 'option_3' , qo_dict)))  
+#         
+#     for thread in thread_list:
+#         thread.start()
+#        
+#     for thread in thread_list:
+#         thread.join()
 
 
 
@@ -215,12 +203,15 @@ def test_alignment():
                 'option_2': '',
                 'option_3': ''  }
     
+    start_time = time.time()    
     
 #     adb_screenshot(ADB_SCREENSHOT_FILENAME)#put back in !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     original_screenshot = Image.open(ADB_SCREENSHOT_FILENAME)
 #     run_crop_img_and_extract_text_threads(original_screenshot, qo_dict)
     crop_question_and_option_imgs(original_screenshot)
     run_extract_text_and_add_to_qo_dict_threads(qo_dict)
+    
+    print('time to extract text: ', time.time() - start_time)
         
 #     run_grab_screen_and_extract_text_threads(qo_dict)
     
