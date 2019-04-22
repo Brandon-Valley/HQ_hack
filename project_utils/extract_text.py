@@ -52,18 +52,59 @@ ADB_SCREENSHOT_FILENAME = 'screencap.png'
 
 
 
-def crop_question_and_options_from_adb_screenshot(adb_screenshot_filename):
+# def crop_question_and_options_from_adb_screenshot(adb_screenshot_filename):
+#     
+#     img = Image.open(adb_screenshot_filename)
+#     cropped_img = img.crop((80,550,900,800))
+#     cropped_img.show()
+
+
+
+
     
-    img = Image.open(adb_screenshot_filename)
-#     area = (400, 400, 800, 800)
-    cropped_img = img.crop(QUESTION_SC_COORDS)
-    cropped_img.show()
+    
+def crop_img(original_img, cropped_img_path, crop_coords):
+#         img = Image.open(adb_screenshot_filename)
+    cropped_img = original_img.crop(crop_coords)
+#     cropped_img.show()
+    cropped_img.save(cropped_img_path)
+    
 
 def adb_screenshot(screenshot_filename):
     os.system("adb shell screencap -p /sdcard/" + screenshot_filename)
     os.system("adb pull /sdcard/" + screenshot_filename)
 #     image = cv2.imread(screenshot_filename)
 #     image.show()
+
+
+def crop_img_and_extract_text(original_img, crop_coords, cropped_img_path, qo_dict_key, qo_dict):
+    crop_img(original_img, cropped_img_path, crop_coords)
+    qo_dict[qo_dict_key] = extract_text_from_image(cropped_img_path)
+    
+    
+
+def run_crop_img_and_extract_text_threads(original_img, qo_dict, img_path_list = QO_IMG_PATH_LIST):
+    crop_img_and_extract_text(original_img, QUESTION_SC_COORDS, img_path_list[0], 'question' , qo_dict)
+    crop_img_and_extract_text(original_img, OPTION_1_SC_COORDS, img_path_list[1], 'option_1' , qo_dict)
+    crop_img_and_extract_text(original_img, OPTION_2_SC_COORDS, img_path_list[2], 'option_2' , qo_dict)
+    crop_img_and_extract_text(original_img, OPTION_3_SC_COORDS, img_path_list[3], 'option_3' , qo_dict)
+    
+    
+#     
+#     thread_list = []
+#        
+#     thread_list.append(Thread(target=crop_img_and_extract_text, args=(original_img, QUESTION_SC_COORDS, img_path_list[0], 'question' , qo_dict)))
+# #     thread_list.append(Thread(target=crop_img_and_extract_text, args=(original_img, OPTION_1_SC_COORDS, img_path_list[1], 'option_1' , qo_dict)))
+# #     thread_list.append(Thread(target=crop_img_and_extract_text, args=(original_img, OPTION_2_SC_COORDS, img_path_list[2], 'option_2' , qo_dict)))
+# #     thread_list.append(Thread(target=crop_img_and_extract_text, args=(original_img, OPTION_3_SC_COORDS, img_path_list[3], 'option_3' , qo_dict)))  
+# #         
+#     for thread in thread_list:
+#         thread.start()
+#        
+#     for thread in thread_list:
+#         thread.join()
+
+
 
 
 def grab_screen(screenshot_cords, save_path):
@@ -139,8 +180,13 @@ def test_alignment():
                 'option_1': '',
                 'option_2': '',
                 'option_3': ''  }
+    
+    
+#     adb_screenshot(ADB_SCREENSHOT_FILENAME)#put back in !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    original_screenshot = Image.open(ADB_SCREENSHOT_FILENAME)
+    run_crop_img_and_extract_text_threads(original_screenshot, qo_dict)
         
-    run_grab_screen_and_extract_text_threads(qo_dict)
+#     run_grab_screen_and_extract_text_threads(qo_dict)
     
     
     question_img = Image.open(QUESTION_IMG_PATH, 'r')
@@ -191,6 +237,10 @@ def test_alignment():
 
 if __name__ == '__main__':
     print ('running...')
+    
+    test_alignment()
+    
+    
     adb_screenshot(ADB_SCREENSHOT_FILENAME)
     crop_question_and_options_from_adb_screenshot(ADB_SCREENSHOT_FILENAME)
     
