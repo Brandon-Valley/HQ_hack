@@ -77,6 +77,40 @@ def adb_screenshot(screenshot_filename):
 #     image.show()
 
 
+def crop_question_and_option_imgs(original_img, img_path_list = QO_IMG_PATH_LIST):
+    crop_img(original_img,  img_path_list[0], QUESTION_SC_COORDS)
+    crop_img(original_img,  img_path_list[1], OPTION_1_SC_COORDS)
+    crop_img(original_img,  img_path_list[2], OPTION_2_SC_COORDS)
+    crop_img(original_img,  img_path_list[3], OPTION_3_SC_COORDS)
+    
+    
+def extract_text_and_add_to_qo_dict(cropped_img_path, qo_dict_key, qo_dict):
+    qo_dict[qo_dict_key] = extract_text_from_image(cropped_img_path)
+    
+    
+def run_extract_text_and_add_to_qo_dict_threads(qo_dict, img_path_list = QO_IMG_PATH_LIST):
+    thread_list = []
+       
+    thread_list.append(Thread(target=extract_text_and_add_to_qo_dict, args=(img_path_list[0], 'question' , qo_dict)))
+    thread_list.append(Thread(target=extract_text_and_add_to_qo_dict, args=(img_path_list[1], 'option_1' , qo_dict)))
+    thread_list.append(Thread(target=extract_text_and_add_to_qo_dict, args=(img_path_list[2], 'option_2' , qo_dict)))
+    thread_list.append(Thread(target=extract_text_and_add_to_qo_dict, args=(img_path_list[3], 'option_3' , qo_dict)))  
+        
+    for thread in thread_list:
+        thread.start()
+       
+    for thread in thread_list:
+        thread.join()
+    
+    
+    
+def run_extract_text_threads(original_img, qo_dict, img_path_list = QO_IMG_PATH_LIST):
+    crop_img_and_extract_text(original_img, QUESTION_SC_COORDS, img_path_list[0], 'question' , qo_dict)
+    crop_img_and_extract_text(original_img, OPTION_1_SC_COORDS, img_path_list[1], 'option_1' , qo_dict)
+    crop_img_and_extract_text(original_img, OPTION_2_SC_COORDS, img_path_list[2], 'option_2' , qo_dict)
+    crop_img_and_extract_text(original_img, OPTION_3_SC_COORDS, img_path_list[3], 'option_3' , qo_dict)
+
+
 def crop_img_and_extract_text(original_img, crop_coords, cropped_img_path, qo_dict_key, qo_dict):
     crop_img(original_img, cropped_img_path, crop_coords)
     qo_dict[qo_dict_key] = extract_text_from_image(cropped_img_path)
@@ -184,7 +218,9 @@ def test_alignment():
     
 #     adb_screenshot(ADB_SCREENSHOT_FILENAME)#put back in !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     original_screenshot = Image.open(ADB_SCREENSHOT_FILENAME)
-    run_crop_img_and_extract_text_threads(original_screenshot, qo_dict)
+#     run_crop_img_and_extract_text_threads(original_screenshot, qo_dict)
+    crop_question_and_option_imgs(original_screenshot)
+    run_extract_text_and_add_to_qo_dict_threads(qo_dict)
         
 #     run_grab_screen_and_extract_text_threads(qo_dict)
     
