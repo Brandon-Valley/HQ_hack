@@ -30,9 +30,9 @@ import time #just for testing
 yo = 80
 # xo = 30
 q_x_start = 90
-q_y_start = 540
+q_y_start = 500
 q_width   = 900
-q_hight   = 250
+q_hight   = 300
 
 o_x_start   = 160
 o_1_y_start = 1010
@@ -220,10 +220,20 @@ def read_questions_and_options_from_screen():
 #need to move the phone window
 def test_alignment():
     os.system("adb kill-server")
-    os.system("adb connect 192.168.0.9:5555")
-
     
-    os.system('adb devices')
+    
+    # for wireless adb
+#     os.system("adb connect 192.168.0.9:5555")
+    
+    # for wired adb
+    os.system("adb disconnect 192.168.0.9:5555")
+    
+    
+#     os.system("adb connect 9889ba33444758574e:5037")
+    
+#     os.system('adb devices')
+#     os.system("adb disconnect 192.168.0.9:5555")
+#     os.system("adb connect 9889ba33444758574e")
     
     
     qo_dict = { 'question': '', 
@@ -234,8 +244,8 @@ def test_alignment():
     start_time = time.time()    
     
     adb_screenshot(ADB_SCREENSHOT_FILENAME)#put back in !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    print('screenshot time: ', time.time() - start_time)
     
-    os.system("adb kill-server")
     
     original_screenshot = Image.open(ADB_SCREENSHOT_FILENAME)
 #     run_crop_img_and_extract_text_threads(original_screenshot, qo_dict)
@@ -243,6 +253,8 @@ def test_alignment():
     run_extract_text_and_add_to_qo_dict_threads(qo_dict)
     
     print('time to extract text: ', time.time() - start_time)
+    
+    os.system("adb kill-server")
         
 #     run_grab_screen_and_extract_text_threads(qo_dict)
     
