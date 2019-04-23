@@ -78,7 +78,7 @@ def crop_img(original_img, cropped_img_path, crop_coords):
 #     cropped_img.show()
     cropped_img.save(cropped_img_path)
     
-
+#if multiple devices:  adb -s 192.168.0.15  pull /sdcard/sc.png
 def adb_screenshot(screenshot_filename):
     os.system("adb shell screencap -p /sdcard/" + screenshot_filename)
     os.system("adb pull /sdcard/" + screenshot_filename)
