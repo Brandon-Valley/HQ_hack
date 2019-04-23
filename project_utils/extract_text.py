@@ -221,12 +221,12 @@ def read_questions_and_options_from_screen():
 def test_alignment():
     os.system("adb kill-server")
     
-    
+    os.system('adb devices')
     # for wireless adb
-#     os.system("adb connect 192.168.0.9:5555")
+    os.system("adb connect 192.168.0.9:5555")
     
     # for wired adb
-    os.system("adb disconnect 192.168.0.9:5555")
+#     os.system("adb disconnect 192.168.0.9:5555")
     
     
 #     os.system("adb connect 9889ba33444758574e:5037")

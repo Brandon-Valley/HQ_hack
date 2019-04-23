@@ -109,6 +109,23 @@ def make_and_add_browser(browser_l, x):
     browser_l.append(br)
 
 
+def build_browser_list(num_browsers):
+    browser_list = []
+    b_thread_list = []
+    DUMMY_INT = 4 #this does not do anything but for some reason I cant make browsers in threads without adding this
+    
+    for x in range(num_browsers):
+        b_thread_list.append(Thread(target=make_and_add_browser, args=(browser_list, DUMMY_INT) ))
+        
+    for thread in b_thread_list:
+        thread.start()
+     
+    for thread in b_thread_list:
+        thread.join()
+    
+    return browser_list
+
+
 
 
 from threading import Thread
@@ -122,18 +139,20 @@ def main():
     b_st = time.time()
     
     NUM_BROWSERS = 2
-    browser_list = []
-    b_thread_list = []
-    DUMMY_INT = 4 #this does not do anything but for some reason I cant make browsers in threads without adding this
-    
-    for x in range(NUM_BROWSERS):
-        b_thread_list.append(Thread(target=make_and_add_browser, args=(browser_list, DUMMY_INT) ))
-        
-    for thread in b_thread_list:
-        thread.start()
-     
-    for thread in b_thread_list:
-        thread.join()
+#     browser_list = []
+#     b_thread_list = []
+#     DUMMY_INT = 4 #this does not do anything but for some reason I cant make browsers in threads without adding this
+#     
+#     for x in range(NUM_BROWSERS):
+#         b_thread_list.append(Thread(target=make_and_add_browser, args=(browser_list, DUMMY_INT) ))
+#         
+#     for thread in b_thread_list:
+#         thread.start()
+#      
+#     for thread in b_thread_list:
+#         thread.join()
+
+    browser_list = build_browser_list(NUM_BROWSERS)
     
     b_et = time.time()
     print('time to make browsers: ', b_et - b_st)
