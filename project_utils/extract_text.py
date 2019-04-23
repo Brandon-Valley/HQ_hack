@@ -219,6 +219,13 @@ def read_questions_and_options_from_screen():
 #showing what it grabbed for the question and options, based on this, you can tell if you 
 #need to move the phone window
 def test_alignment():
+    os.system("adb kill-server")
+    os.system("adb connect 192.168.0.9:5555")
+
+    
+    os.system('adb devices')
+    
+    
     qo_dict = { 'question': '', 
                 'option_1': '',
                 'option_2': '',
@@ -227,6 +234,9 @@ def test_alignment():
     start_time = time.time()    
     
     adb_screenshot(ADB_SCREENSHOT_FILENAME)#put back in !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    
+    os.system("adb kill-server")
+    
     original_screenshot = Image.open(ADB_SCREENSHOT_FILENAME)
 #     run_crop_img_and_extract_text_threads(original_screenshot, qo_dict)
     crop_question_and_option_imgs(original_screenshot)
@@ -280,36 +290,36 @@ def test_alignment():
     return qo_dict
     
 
-
-
+# https://superuser.com/questions/1395888/enable-adb-debugging-on-android-phone-with-broken-disabled-screen
+# https://stackoverflow.com/questions/43050370/adb-server-version-36-doesnt-match-this-client-39-not-using-genymotion
 #error: could not install *smartsocket* listener: cannot bind to 127.0.0.1:5037: Only one usage of each socket address (protocol/network address/port) is normally permitted. (10048)
 if __name__ == '__main__':
     print ('running...')
     
     test_alignment()
     
-    
-    adb_screenshot(ADB_SCREENSHOT_FILENAME)
-    crop_question_and_options_from_adb_screenshot(ADB_SCREENSHOT_FILENAME)
-    
-    st = time.time()
-        
-    qo_d = read_questions_and_options_from_screen()
-#     qo_dict = test_alignment()
-#     print(qo_d)
-
-
-    testing_utils.print_str_wo_error(qo_d['question'])
-
-#     print(qo_d['question'])
-    print(qo_d['option_1'])
-    print(qo_d['option_2'])
-    print(qo_d['option_3'])
-#     for char in qo_d['question']:
-#         print(char)
-
-    
-    et = time.time()
-    print('total time: ', et - st)
-    print('done')
-    
+#     
+#     adb_screenshot(ADB_SCREENSHOT_FILENAME)
+#     crop_question_and_options_from_adb_screenshot(ADB_SCREENSHOT_FILENAME)
+#     
+#     st = time.time()
+#         
+#     qo_d = read_questions_and_options_from_screen()
+# #     qo_dict = test_alignment()
+# #     print(qo_d)
+# 
+# 
+#     testing_utils.print_str_wo_error(qo_d['question'])
+# 
+# #     print(qo_d['question'])
+#     print(qo_d['option_1'])
+#     print(qo_d['option_2'])
+#     print(qo_d['option_3'])
+# #     for char in qo_d['question']:
+# #         print(char)
+# 
+#     
+#     et = time.time()
+#     print('total time: ', et - st)
+#     print('done')
+#     
