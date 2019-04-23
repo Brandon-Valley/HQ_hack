@@ -25,14 +25,35 @@ import time #just for testing
 #                           y2
 #                           |
 #                           V
-#(31,228,455,710)     
+#     
 #                     x1  y1  x2  y2
 yo = 80
 # xo = 30
-QUESTION_SC_COORDS = (40,240,420,460)#(80,550,900,800)
-OPTION_1_SC_COORDS = (70,470,380,530)
-OPTION_2_SC_COORDS = (70,470+yo,380,530+yo)
-OPTION_3_SC_COORDS = (70,470+(yo*2),380,530+(yo*2))
+q_x_start = 90
+q_y_start = 540
+q_width   = 900
+q_hight   = 250
+
+o_x_start   = 160
+o_1_y_start = 1010
+o_width     = 820
+o_hight     = 90
+
+o_y_offset  = 190
+
+QUESTION_SC_COORDS = (q_x_start,    q_y_start,                       q_x_start + q_width,    q_y_start   + q_hight)
+OPTION_1_SC_COORDS = (o_x_start,    o_1_y_start,                     o_x_start + o_width,    o_1_y_start + o_hight)
+OPTION_2_SC_COORDS = (o_x_start,    o_1_y_start +  o_y_offset,       o_x_start + o_width,    o_1_y_start + o_hight +  o_y_offset)
+OPTION_3_SC_COORDS = (o_x_start,    o_1_y_start + (o_y_offset * 2),  o_x_start + o_width,    o_1_y_start + o_hight + (o_y_offset * 2))
+
+
+# yo = 80
+# # xo = 30
+# QUESTION_SC_COORDS = (40,240,420,460)#(80,550,900,800)
+# OPTION_1_SC_COORDS = (70,470,380,530)
+# OPTION_2_SC_COORDS = (70,470+yo,380,530+yo)
+# OPTION_3_SC_COORDS = (70,470+(yo*2),380,530+(yo*2))
+
 
 QUESTION_IMG_PATH = 'question_temp.png'
 OPTION_1_IMG_PATH = 'option_1_temp.png'
@@ -44,7 +65,7 @@ QO_IMG_PATH_LIST = [QUESTION_IMG_PATH,
                     OPTION_2_IMG_PATH,
                     OPTION_3_IMG_PATH]
 
-BACKGROUND_IMG_DIMS = (500, 1200)
+BACKGROUND_IMG_DIMS = (1000, 1500)
 BACKGROUND_IMG_COLOR = (5, 5, 5, 5)#(000, 153, 000, 5)
 
 ADB_SCREENSHOT_FILENAME = 'screencap.png'
@@ -205,7 +226,7 @@ def test_alignment():
     
     start_time = time.time()    
     
-#     adb_screenshot(ADB_SCREENSHOT_FILENAME)#put back in !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    adb_screenshot(ADB_SCREENSHOT_FILENAME)#put back in !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     original_screenshot = Image.open(ADB_SCREENSHOT_FILENAME)
 #     run_crop_img_and_extract_text_threads(original_screenshot, qo_dict)
     crop_question_and_option_imgs(original_screenshot)
@@ -261,7 +282,7 @@ def test_alignment():
 
 
 
-
+#error: could not install *smartsocket* listener: cannot bind to 127.0.0.1:5037: Only one usage of each socket address (protocol/network address/port) is normally permitted. (10048)
 if __name__ == '__main__':
     print ('running...')
     
