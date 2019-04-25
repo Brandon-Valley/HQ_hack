@@ -15,6 +15,9 @@ from threading import Thread
 
 from project_utils import testing_utils
 
+sys.path.insert(0, 'adb')
+import adb_utils
+
 
 import time #just for testing
 
@@ -78,12 +81,7 @@ def crop_img(original_img, cropped_img_path, crop_coords):
 #     cropped_img.show()
     cropped_img.save(cropped_img_path)
     
-#if multiple devices:  adb -s 192.168.0.15  pull /sdcard/sc.png
-def adb_screenshot(screenshot_filename):
-    os.system("adb shell screencap -p /sdcard/" + screenshot_filename)
-    os.system("adb pull /sdcard/" + screenshot_filename)
-#     image = cv2.imread(screenshot_filename)
-#     image.show()
+
 
 
 def crop_question_and_option_imgs(original_img, img_path_list = QO_IMG_PATH_LIST):
@@ -215,15 +213,20 @@ def read_questions_and_options_from_screen():
 
 
 
+
+
+
 #runs a dummy version of read_questions_and_options_from_screen() and shows an image
 #showing what it grabbed for the question and options, based on this, you can tell if you 
 #need to move the phone window
 def test_alignment():
-    os.system("adb kill-server")
-    
-    os.system('adb devices')
-    # for wireless adb
-    os.system("adb connect 192.168.0.9:5555")
+    adb_utils.init_adb()
+    print('adb done setting up')
+#     os.system("adb kill-server")
+#     
+#     os.system('adb devices')
+#     # for wireless adb
+#     os.system("adb connect 192.168.0.9:5555")
     
     # for wired adb
 #     os.system("adb disconnect 192.168.0.9:5555")
@@ -243,43 +246,43 @@ def test_alignment():
     
     start_time = time.time()    
     
-    adb_screenshot(ADB_SCREENSHOT_FILENAME)#put back in !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    adb_utils.adb_screenshot(ADB_SCREENSHOT_FILENAME)#put back in !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     print('screenshot time: ', time.time() - start_time)
-    
-    
+     
+     
     original_screenshot = Image.open(ADB_SCREENSHOT_FILENAME)
 #     run_crop_img_and_extract_text_threads(original_screenshot, qo_dict)
     crop_question_and_option_imgs(original_screenshot)
     run_extract_text_and_add_to_qo_dict_threads(qo_dict)
-    
+     
     print('time to extract text: ', time.time() - start_time)
-    
-    os.system("adb kill-server")
-        
+     
+#     os.system("adb kill-server")
+         
 #     run_grab_screen_and_extract_text_threads(qo_dict)
-    
-    
+     
+     
     question_img = Image.open(QUESTION_IMG_PATH, 'r')
     option_1_img = Image.open(OPTION_1_IMG_PATH, 'r')
     option_2_img = Image.open(OPTION_2_IMG_PATH, 'r')
     option_3_img = Image.open(OPTION_3_IMG_PATH, 'r')
-    
+     
     img_w, img_h = question_img.size
     background = Image.new('RGBA', BACKGROUND_IMG_DIMS, BACKGROUND_IMG_COLOR)
     bg_w, bg_h = background.size
-    
+     
     question_img_offset = ((bg_w - img_w) // 2, ( bg_h - img_h) // 4)
     option_1_img_offset = ((bg_w - img_w) // 2, ((bg_h - img_h) // 4) * 2)
     option_2_img_offset = ((bg_w - img_w) // 2, ((bg_h - img_h) // 4) * 3)
     option_3_img_offset = ((bg_w - img_w) // 2, ((bg_h - img_h) // 4) * 4)
-    
+     
     background.paste(question_img, question_img_offset)
     background.paste(option_1_img, option_1_img_offset)
     background.paste(option_2_img, option_2_img_offset)
     background.paste(option_3_img, option_3_img_offset)
 #     background.save('out.png')
     background.show()
-    
+     
     # run threads to extract text from images
 #     thread_list = []
 #        
@@ -293,9 +296,9 @@ def test_alignment():
 #        
 #     for thread in thread_list:
 #         thread.join()
-    
-    
-    
+     
+     
+     
     delete_temp_files()
     
     
