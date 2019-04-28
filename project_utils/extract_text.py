@@ -39,9 +39,9 @@ q_width   = 900
 q_hight   = 300
 
 o_x_start   = 160
-o_1_y_start = 1010
+o_1_y_start = 985
 o_width     = 820
-o_hight     = 90
+o_hight     = 65
 
 o_y_offset  = 190
 
