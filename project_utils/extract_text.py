@@ -14,9 +14,10 @@ from threading import Thread
 
 
 from project_utils import testing_utils
+from project_utils import adb_utils
 
-sys.path.insert(0, 'adb')
-import adb_utils
+# sys.path.insert(0, 'adb')
+# import adb_utils
 
 
 import time #just for testing
