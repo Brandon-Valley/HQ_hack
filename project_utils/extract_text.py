@@ -221,7 +221,7 @@ def read_questions_and_options_from_screen():
 #showing what it grabbed for the question and options, based on this, you can tell if you 
 #need to move the phone window
 def test_alignment():
-    adb_utils.init_adb()
+    adb_device_ip = adb_utils.init_adb()
     print('adb done setting up')
 #     os.system("adb kill-server")
 #     
@@ -247,7 +247,7 @@ def test_alignment():
     
     start_time = time.time()    
     
-    adb_utils.adb_screenshot(ADB_SCREENSHOT_FILENAME)#put back in !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    adb_utils.adb_screenshot(ADB_SCREENSHOT_FILENAME, adb_device_ip)#put back in !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     print('screenshot time: ', time.time() - start_time)
      
      
