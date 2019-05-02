@@ -112,7 +112,9 @@ def run_extract_text_and_add_to_qo_dict_threads(qo_dict, img_path_list = QO_IMG_
     
 
 BAD_READ_SYM_CHARS_REPLACE_D = {'\n': ' ',
-                                '|' : 'I'}
+                                '|' : 'l',
+                                ' |': ' I',
+                                'f-f': 'ff'}
 
 BAD_READ_HEX_CHARS_REPLACE_D = {'fb01': 'fi'}
 
@@ -125,6 +127,9 @@ def replace_bad_read_chars(text):
         hex_char = format(ord(char), "x")
         if format(ord(char), "x") in BAD_READ_HEX_CHARS_REPLACE_D.keys():
             text = text.replace(char, BAD_READ_HEX_CHARS_REPLACE_D[hex_char])
+            
+    #replace any double spaces
+    text = text.replace("  ", " ")
             
     return text
     
