@@ -110,49 +110,16 @@ def run_extract_text_and_add_to_qo_dict_threads(qo_dict, img_path_list = QO_IMG_
     for thread in thread_list:
         thread.join()
     
+
+BAD_READ_CHARS_REPLACE_D = {'\n': ' '}
+
+def replace_bad_read_chars(text):
+    for bad_chars, replacement_chars in BAD_READ_CHARS_REPLACE_D.items():
+        if bad_chars in text:
+            text = text.replace(bad_chars, replacement_chars)
+    return text
     
-#     
-# def run_extract_text_threads(original_img, qo_dict, img_path_list = QO_IMG_PATH_LIST):
-#     crop_img_and_extract_text(original_img, QUESTION_SC_COORDS, img_path_list[0], 'question' , qo_dict)
-#     crop_img_and_extract_text(original_img, OPTION_1_SC_COORDS, img_path_list[1], 'option_1' , qo_dict)
-#     crop_img_and_extract_text(original_img, OPTION_2_SC_COORDS, img_path_list[2], 'option_2' , qo_dict)
-#     crop_img_and_extract_text(original_img, OPTION_3_SC_COORDS, img_path_list[3], 'option_3' , qo_dict)
-# 
-# 
-# def crop_img_and_extract_text(original_img, crop_coords, cropped_img_path, qo_dict_key, qo_dict):
-#     crop_img(original_img, cropped_img_path, crop_coords)
-#     qo_dict[qo_dict_key] = extract_text_from_image(cropped_img_path)
-#     
-#     
-# 
-# def run_crop_img_and_extract_text_threads(original_img, qo_dict, img_path_list = QO_IMG_PATH_LIST):
-#     crop_img_and_extract_text(original_img, QUESTION_SC_COORDS, img_path_list[0], 'question' , qo_dict)
-#     crop_img_and_extract_text(original_img, OPTION_1_SC_COORDS, img_path_list[1], 'option_1' , qo_dict)
-#     crop_img_and_extract_text(original_img, OPTION_2_SC_COORDS, img_path_list[2], 'option_2' , qo_dict)
-#     crop_img_and_extract_text(original_img, OPTION_3_SC_COORDS, img_path_list[3], 'option_3' , qo_dict)
-#     
     
-#     
-#     thread_list = []
-#        
-#     thread_list.append(Thread(target=crop_img_and_extract_text, args=(original_img, QUESTION_SC_COORDS, img_path_list[0], 'question' , qo_dict)))
-# #     thread_list.append(Thread(target=crop_img_and_extract_text, args=(original_img, OPTION_1_SC_COORDS, img_path_list[1], 'option_1' , qo_dict)))
-# #     thread_list.append(Thread(target=crop_img_and_extract_text, args=(original_img, OPTION_2_SC_COORDS, img_path_list[2], 'option_2' , qo_dict)))
-# #     thread_list.append(Thread(target=crop_img_and_extract_text, args=(original_img, OPTION_3_SC_COORDS, img_path_list[3], 'option_3' , qo_dict)))  
-# #         
-#     for thread in thread_list:
-#         thread.start()
-#        
-#     for thread in thread_list:
-#         thread.join()
-
-
-
-
-# def grab_screen(screenshot_cords, save_path):
-#     im = Imagegrab.grab(bbox=screenshot_cords) #im = Imagegrab.grab(bbox=(31,228,485,640))
-#     im.save(save_path)
-#
 
 def extract_text_from_image(img_path, lang = 'eng'):    
     image = cv2.imread(img_path)
@@ -166,7 +133,9 @@ def extract_text_from_image(img_path, lang = 'eng'):
 
     text = pytesseract.image_to_string(image, lang)
     
-    return text
+    
+    
+    return replace_bad_read_chars(text)
 
 # 
 # #probably faster to give this func its own thread
@@ -293,19 +262,7 @@ def test_alignment():
 #     background.save('out.png')
     background.show()
      
-    # run threads to extract text from images
-#     thread_list = []
-#        
-#     thread_list.append(Thread(target=extract_text_from_image, args=(QUESTION_IMG_PATH, 'question', qo_dict)))
-#     thread_list.append(Thread(target=grab_screen_and_extract_text, args=(OPTION_1_SC_COORDS, OPTION_1_IMG_PATH, 'options' , qo_dict)))
-#     thread_list.append(Thread(target=grab_screen_and_extract_text, args=(OPTION_2_SC_COORDS, OPTION_2_IMG_PATH, 'options' , qo_dict)))
-#     thread_list.append(Thread(target=grab_screen_and_extract_text, args=(OPTION_3_SC_COORDS, OPTION_3_IMG_PATH, 'options' , qo_dict)))  
-#         
-#     for thread in thread_list:
-#         thread.start()
-#        
-#     for thread in thread_list:
-#         thread.join()
+    print(qo_dict)
      
      
      

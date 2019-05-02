@@ -7,7 +7,8 @@ KNOWN_ADB_DEVICE_IP_D = {'WIRED'    : '9889ba33444758574e',
 
 NON_IP_STR_L = ["b'List of devices attached", 'r','tdevice', 'n', 'n"', "n'", 
                 "nadb server version (40) doesn't match this client (36); killing...",
-                'n* daemon not running. starting it now on port 5037 *', 'n* daemon started successfully *']
+                'n* daemon not running. starting it now on port 5037 *', 'n* daemon started successfully *',
+                '"List of devices attached']
 
 
 
