@@ -111,12 +111,24 @@ def run_extract_text_and_add_to_qo_dict_threads(qo_dict, img_path_list = QO_IMG_
         thread.join()
     
 
-BAD_READ_CHARS_REPLACE_D = {'\n': ' '}
+BAD_READ_SYM_CHARS_REPLACE_D = {'\n': ' ',
+                                '|' : 'I'}
+
+BAD_READ_HEX_CHARS_REPLACE_D = {'fb01': 'fi'}
 
 def replace_bad_read_chars(text):
-    for bad_chars, replacement_chars in BAD_READ_CHARS_REPLACE_D.items():
+    for bad_chars, replacement_chars in BAD_READ_SYM_CHARS_REPLACE_D.items():
         if bad_chars in text:
             text = text.replace(bad_chars, replacement_chars)
+            
+    for char in text:
+        hex_char = format(ord(char), "x")
+#         print(hex_char)
+#         print(hex(ord(char)), type(hex(ord(char))), hex(ord(char)) == '0xfb01', hex(ord(char)) in BAD_READ_HEX_CHARS_REPLACE_D.values())#``````````````````````````````````````````````````
+        if format(ord(char), "x") in BAD_READ_HEX_CHARS_REPLACE_D.keys():
+#             print('found bad hex char!!!!!!!!!!!!')#`````````````````````````````````````````````````````
+            text = text.replace(char, BAD_READ_HEX_CHARS_REPLACE_D[hex_char])
+            
     return text
     
     
@@ -262,13 +274,11 @@ def test_alignment():
 #     background.save('out.png')
     background.show()
      
-    print(qo_dict)
      
-     
+    
+    testing_utils.print_qo_d(qo_dict)
      
     delete_temp_files()
-    
-    
     return qo_dict
     
 
