@@ -50,6 +50,7 @@ import search_utils
 import utils
 import colors # need?????????????????????????????????????????????????????????
 from project_utils import extract_text # from parent dir
+from project_utils import adb_utils    # from parent dir
 
 
 # for terminal colors 
@@ -397,15 +398,19 @@ KEYWORDS_CSV_PATH = 'keywords.csv'
 def main():
 	times = []
 	
+	print('reading keywords from csv...')
 	keywords_d = utils.get_keywords_d_from_csv(KEYWORDS_CSV_PATH)
-	print(keywords_d)
+	
+	print('setting up ADB...')
+	adb_device_ip = adb_utils.init_adb()
+	
+# 	print(keywords_d)
 	print ('')
 	print ('')
 	print ('')
 	print ('')
 	
 	while(1):
-# 		print("\033[1;33;40m reading screen tttttttttttttest...")
 		print('')
 		print('')
 		keypressed = input(colors.ORANGE + 'Press q to quit, Press anything else to read screen:' + colors.ENDC)
@@ -421,9 +426,10 @@ def main():
 			try:
 				question = ''
 # 				question, options = get_question_and_options()
-				qo_d = extract_text.read_questions_and_options_from_screen()
+				qo_d = extract_text.read_questions_and_options_from_screen(adb_device_ip)
 				question = qo_d['question']
 				options = [qo_d['option_1'], qo_d['option_2'], qo_d['option_3']]
+				print('here')
 
 # 				start_t = time.time()#```````````````````````````````````````````
 

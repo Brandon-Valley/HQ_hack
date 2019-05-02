@@ -200,15 +200,24 @@ def delete_temp_files():
             pass
 
 
-def read_questions_and_options_from_screen():    
+def read_questions_and_options_from_screen(adb_device_ip):    
     qo_dict = { 'question': '', 
                 'option_1': '',
                 'option_2': '',
                 'option_3': ''  }
            
-    run_grab_screen_and_extract_text_threads(qo_dict)
+#     run_grab_screen_and_extract_text_threads(qo_dict)
+
+
+    adb_utils.adb_screenshot(ADB_SCREENSHOT_FILENAME, adb_device_ip)
+    original_screenshot = Image.open(ADB_SCREENSHOT_FILENAME)
+    crop_question_and_option_imgs(original_screenshot)
+    run_extract_text_and_add_to_qo_dict_threads(qo_dict)
+
 
     delete_temp_files()
+    
+    print('in extract_text, qo_d: ', qo_dict)
 #      
     return qo_dict
 
@@ -247,7 +256,7 @@ def test_alignment():
     
     start_time = time.time()    
     
-    adb_utils.adb_screenshot(ADB_SCREENSHOT_FILENAME, adb_device_ip)#put back in !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    adb_utils.adb_screenshot(ADB_SCREENSHOT_FILENAME, adb_device_ip)
     print('screenshot time: ', time.time() - start_time)
      
      
