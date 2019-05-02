@@ -33,15 +33,15 @@ import time #just for testing
 #                     x1  y1  x2  y2
 yo = 80
 # xo = 30
-q_x_start = 90
-q_y_start = 500
+q_x_start = 80
+q_y_start = 470
 q_width   = 900
-q_hight   = 300
+q_hight   = 370
 
 o_x_start   = 160
-o_1_y_start = 985
+o_1_y_start = 980
 o_width     = 820
-o_hight     = 65
+o_hight     = 70
 
 o_y_offset  = 190
 
@@ -123,10 +123,7 @@ def replace_bad_read_chars(text):
             
     for char in text:
         hex_char = format(ord(char), "x")
-#         print(hex_char)
-#         print(hex(ord(char)), type(hex(ord(char))), hex(ord(char)) == '0xfb01', hex(ord(char)) in BAD_READ_HEX_CHARS_REPLACE_D.values())#``````````````````````````````````````````````````
         if format(ord(char), "x") in BAD_READ_HEX_CHARS_REPLACE_D.keys():
-#             print('found bad hex char!!!!!!!!!!!!')#`````````````````````````````````````````````````````
             text = text.replace(char, BAD_READ_HEX_CHARS_REPLACE_D[hex_char])
             
     return text
@@ -149,27 +146,6 @@ def extract_text_from_image(img_path, lang = 'eng'):
     
     return replace_bad_read_chars(text)
 
-# 
-# #probably faster to give this func its own thread
-# def grab_screen_and_extract_text(screenshot_coords, img_path, qo_dict_key, qo_dict):
-#     grab_screen(screenshot_coords, img_path)
-#     qo_dict[qo_dict_key] = extract_text_from_image(img_path) 
-#     
-# 
-# 
-# def run_grab_screen_and_extract_text_threads(qo_dict, img_path_list = QO_IMG_PATH_LIST):
-#     thread_list = []
-#        
-#     thread_list.append(Thread(target=grab_screen_and_extract_text, args=(QUESTION_SC_COORDS, img_path_list[0], 'question' , qo_dict)))
-#     thread_list.append(Thread(target=grab_screen_and_extract_text, args=(OPTION_1_SC_COORDS, img_path_list[1], 'option_1' , qo_dict)))
-#     thread_list.append(Thread(target=grab_screen_and_extract_text, args=(OPTION_2_SC_COORDS, img_path_list[2], 'option_2' , qo_dict)))
-#     thread_list.append(Thread(target=grab_screen_and_extract_text, args=(OPTION_3_SC_COORDS, img_path_list[3], 'option_3' , qo_dict)))  
-#         
-#     for thread in thread_list:
-#         thread.start()
-#        
-#     for thread in thread_list:
-#         thread.join()
 
 
 
@@ -213,21 +189,7 @@ def read_questions_and_options_from_screen(adb_device_ip):
 def test_alignment():
     adb_device_ip = adb_utils.init_adb()
     print('adb done setting up')
-#     os.system("adb kill-server")
-#     
-#     os.system('adb devices')
-#     # for wireless adb
-#     os.system("adb connect 192.168.0.9:5555")
-    
-    # for wired adb
-#     os.system("adb disconnect 192.168.0.9:5555")
-    
-    
-#     os.system("adb connect 9889ba33444758574e:5037")
-    
-#     os.system('adb devices')
-#     os.system("adb disconnect 192.168.0.9:5555")
-#     os.system("adb connect 9889ba33444758574e")
+
     
     
     qo_dict = { 'question': '', 
@@ -242,16 +204,11 @@ def test_alignment():
      
      
     original_screenshot = Image.open(ADB_SCREENSHOT_FILENAME)
-#     run_crop_img_and_extract_text_threads(original_screenshot, qo_dict)
     crop_question_and_option_imgs(original_screenshot)
     run_extract_text_and_add_to_qo_dict_threads(qo_dict)
      
     print('time to extract text: ', time.time() - start_time)
-     
-#     os.system("adb kill-server")
-         
-#     run_grab_screen_and_extract_text_threads(qo_dict)
-     
+
      
     question_img = Image.open(QUESTION_IMG_PATH, 'r')
     option_1_img = Image.open(OPTION_1_IMG_PATH, 'r')
@@ -263,9 +220,9 @@ def test_alignment():
     bg_w, bg_h = background.size
      
     question_img_offset = ((bg_w - img_w) // 2, ( bg_h - img_h) // 4)
-    option_1_img_offset = ((bg_w - img_w) // 2, ((bg_h - img_h) // 4) * 2)
-    option_2_img_offset = ((bg_w - img_w) // 2, ((bg_h - img_h) // 4) * 3)
-    option_3_img_offset = ((bg_w - img_w) // 2, ((bg_h - img_h) // 4) * 4)
+    option_1_img_offset = ((bg_w - img_w) // 2, (((bg_h - img_h) // 4) * 2) + 120)
+    option_2_img_offset = ((bg_w - img_w) // 2, (((bg_h - img_h) // 4) * 3) + 0)
+    option_3_img_offset = ((bg_w - img_w) // 2, (((bg_h - img_h) // 4) * 4) + 0)
      
     background.paste(question_img, question_img_offset)
     background.paste(option_1_img, option_1_img_offset)
