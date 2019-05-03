@@ -17,8 +17,7 @@ def get_first_wiki_article_url(query, br):
 #     got_result = False
     while True:
     
-        result = br.search(query + 'wiki')
-#         print('in solver utils', result)#1`````````````````````````````````````````````````````````````````````````````````````
+        result = br.search(query + 'wiki', id = 1) #set id to something else!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
         
         if result == []:
             print('sleeping...')
@@ -85,6 +84,45 @@ def is_gt_zero(num):
     if num > 0:
         return True
     return False
+
+
+def assign_inverted_mult_percent_option_pts(solver_output, num_occ_percent_l, pts_mult):
+    solver_output.option_1_pts = 100 - num_occ_percent_l[0] * pts_mult
+    solver_output.option_2_pts = 100 - num_occ_percent_l[1] * pts_mult
+    solver_output.option_3_pts = 100 - num_occ_percent_l[2] * pts_mult
+    return solver_output
+
+
+def assign_neg_mult_percent_option_pts(solver_output, num_occ_percent_l, pts_mult):
+    solver_output.option_1_pts = (num_occ_percent_l[0] == 0) * pts_mult
+    solver_output.option_2_pts = (num_occ_percent_l[1] == 0)* pts_mult
+    solver_output.option_3_pts = (num_occ_percent_l[2] == 0)* pts_mult
+    return solver_output
+
+
+def give_neg_proportion_option_pts(solver_output, num_occ_l):
+    num_occ_percent_l = num_occurrence_percent_l(num_occ_l)
+    
+    # only one of the options DIDNT showed up in wiki article = give that option full 100 pts and give the others 0
+    if   (num_occ_l.count(0) == 1):
+        return assign_neg_mult_percent_option_pts(solver_output, num_occ_percent_l, 100)
+    # 2 of the options DIDNT showed up in wiki article, give 50 pts to each and 0 to the other
+    elif (num_occ_l.count(0) == 2):
+        return assign_neg_mult_percent_option_pts(solver_output, num_occ_percent_l, 50)
+    # all of them showed up in article, assign points proportionaly inverted
+    elif (num_occ_l.count(0) == 0):
+        return assign_inverted_mult_percent_option_pts(solver_output, num_occ_percent_l, 100)
+    # none showed up, just return like normal, they will all be 0 anyway
+    elif (num_occ_l.count(0) == 3):
+        return assign_neg_mult_percent_option_pts(solver_output, num_occ_percent_l, 100)
+    
+    # assign points proportional to number of occurrences
+    solver_output.option_1_pts = num_occ_percent_l[0] * 100
+    solver_output.option_2_pts = num_occ_percent_l[1] * 100
+    solver_output.option_3_pts = num_occ_percent_l[2] * 100
+    
+    return solver_output
+
 
 
 

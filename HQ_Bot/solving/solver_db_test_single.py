@@ -21,7 +21,7 @@ import phantom_js_browser
 # solver ideas
 # -  if question contains the word 'phrase' and has a quoted phrase, google 'qusetion + phrases.org.uk" and search occurances
 #    - would only apply to 0.011% 
-
+# - DEAL WITH "AT LEAST"
 
 
 # interesting questions:
@@ -36,7 +36,7 @@ import phantom_js_browser
 DB_CSV_PATH = "C:\\Users\\Brandon\\Documents\\Personal_Projects\\HQ_hack\\HQ_qo_database.csv"
 KEYWORDS_CSV_PATH = "C:\\Users\\Brandon\\Documents\\Personal_Projects\\HQ_hack\\HQ_Bot\\keywords.csv"
 
-DB_LINE_NUM =1039
+DB_LINE_NUM =19
 
 
 br = phantom_js_browser.Browser()
@@ -48,6 +48,8 @@ question = db_dl[DB_LINE_NUM - 2]['question']
 options = [db_dl[DB_LINE_NUM - 2]['A'],
            db_dl[DB_LINE_NUM - 2]['B'],
            db_dl[DB_LINE_NUM - 2]['C']]
+
+correct_answer = db_dl[DB_LINE_NUM - 2]['correct']
 
 # print(db_dl[DB_LINE_NUM - 2])
 keywords_d = utils.get_keywords_d_from_csv(KEYWORDS_CSV_PATH)
@@ -61,6 +63,7 @@ print('')
 print('option_1:  ', options[0])
 print('option_2:  ', options[1])
 print('option_3:  ', options[2])
+print('correct:   ', correct_answer)
 print('')
 
 

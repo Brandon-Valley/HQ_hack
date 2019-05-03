@@ -15,6 +15,8 @@ def get_quoted_phrases(question):
 def contains_neg_keyword(question, keywords_d):
     for keyword in keywords_d['negative']:
         if keyword in question:
+            if keyword == 'least' and ' at least ' in question:
+                return False
             return True
     return False
 

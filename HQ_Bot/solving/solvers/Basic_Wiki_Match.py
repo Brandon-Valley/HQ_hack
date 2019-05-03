@@ -21,8 +21,8 @@ class Basic_Wiki_Match(Solver.Solver):
     
     # decide if this solver is appropriate based on the question and options
     def appropriate(self, qo_properties):
-        if qo_properties['contains_neg_keyword'] == True:
-            return False
+#         if qo_properties['contains_neg_keyword'] == True:
+#             return False
 #         print('need to implement appropriate function!')
         return True;
         
@@ -35,6 +35,13 @@ class Basic_Wiki_Match(Solver.Solver):
 #         q_wiki_text = solver_utils.get_text_from_first_wiki_article(question)
         num_occ_l = solver_utils.build_num_occurrence_l(q_wiki_text, options)
         
+        if qo_properties['contains_neg_keyword'] == True:
+            return self.neg_solve(num_occ_l, results_l)
+        else:
+            return self.pos_solve(num_occ_l, results_l)
+    
+    
+    def pos_solve(self, num_occ_l, results_l):
         # only one of the options showed up in wiki article = full confidence and full points to option that showed up
         if   (num_occ_l.count(0) == 2):
             self.solver_output.confidence = 100
@@ -50,13 +57,41 @@ class Basic_Wiki_Match(Solver.Solver):
 
         num_occ_percent_l = solver_utils.num_occurrence_percent_l(num_occ_l)
 
-
         # assign points proportional to number of occurrences
         self.solver_output.option_1_pts = num_occ_percent_l[0] * 100
         self.solver_output.option_2_pts = num_occ_percent_l[1] * 100
         self.solver_output.option_3_pts = num_occ_percent_l[2] * 100
     
         results_l.append(self.solver_output)
+        return results_l
+    
+    
+    def neg_solve(self, num_occ_l, results_l):
+        # only one of the options DIDNT showed up in wiki article = full confidence and full points to option that showed up
+        if   (num_occ_l.count(0) == 1):
+            self.solver_output.confidence = 100
+        # 2 of the options showed up in wiki article, cut confidence
+        elif (num_occ_l.count(0) == 2):
+            self.solver_output.confidence = 25
+        # all of them showed up in article, cut confidence again
+        elif (num_occ_l.count(0) == 0):
+            self.solver_output.confidence = 10
+        # none showed up
+        elif (num_occ_l.count(0) == 3):
+            self.solver_output.confidence = 0
+            
+        # assign solver_output's option points
+        self.solver_output = solver_utils.give_neg_proportion_option_pts(self.solver_output, num_occ_l)
+
+#         num_occ_percent_l = solver_utils.num_occurrence_percent_l(num_occ_l)
+# 
+#         # assign points proportional to number of occurrences
+#         self.solver_output.option_1_pts = 100 - num_occ_percent_l[0] * 100
+#         self.solver_output.option_2_pts = 100 - num_occ_percent_l[1] * 100
+#         self.solver_output.option_3_pts = 100 - num_occ_percent_l[2] * 100
+    
+        results_l.append(self.solver_output)
+        return results_l
     
     
     
